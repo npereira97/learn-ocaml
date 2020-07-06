@@ -155,12 +155,10 @@
   end 
 
 
-open Serialize
- *)
+open Serialize *)
+
 
 (* 
 let test = () |> ask (sig_gen unit_helper string_helper) "~/home/neil/final-env-2/learn-ocaml/src/grader/raml-1.4.2/main"
  *)
 let id = (fun x -> x)
-
-let doubleIt = (fun x -> x^x)

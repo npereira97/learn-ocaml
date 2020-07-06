@@ -7,6 +7,7 @@
  (libraries ocplib-json-typed ocplib_i18n)
 )
 
+
 (rule
  (targets learnocaml_report.odoc)
  (deps .learnocaml_report.objs/learnocaml_report.cmti)
@@ -25,6 +26,7 @@
             ocplib-json-typed
             ocamlgraph
             learnocaml_report
+            core
             learnocaml_repository)
  (modules Introspection_intf
           Introspection
@@ -32,6 +34,7 @@
           Typed_ast
           Typed_ast_lib
           Style_checking
+          Resource_analysis
           Mutation_test)
  (modules_without_implementation Introspection_intf Typed_ast)
  (preprocess (pps learnocaml_ppx_metaquot))
@@ -120,6 +123,7 @@
         .testing.objs/typed_ast.cmi
         .testing.objs/typed_ast_lib.cmi
         .testing.objs/style_checking.cmi
+        .testing.objs/resource_analysis.cmi
         .testing.objs/mutation_test.cmi))
  (action (with-stdout-to %{targets}
            (run ocp-ocamlres -format ocamlres %{compiler-cmis} %{generated-cmis})))
