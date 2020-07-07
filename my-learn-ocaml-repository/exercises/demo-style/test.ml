@@ -11,7 +11,7 @@ let forbidden_construct_msg =
   Message ([Text forbidden_construct_str], Failure)
 
 let test () =
-  try
+  try 
     let tast = Typed_ast_lib.tast_of_parsetree_structure code_ast in
     let checkers = Style_check.all_checkers () in
     Style_check.ast_style_check_structure checkers tast
@@ -19,21 +19,17 @@ let test () =
 
 (* Generate the report to be shown to the student *)
 
+ let log = Resource_analysis.log_error_raml
 
 
 
-let s = match Resource_analysis.test () with 
-        | None -> "Womp womp !"
-        | Some x -> x
- 
+let tick = Resource_analysis.tick;;
 
-
-
-let temp = [Section ([Break;Text (s ^ "This is a test")],[])];;
-
-
+exception Tester
 
 let () =
-  set_result temp(* @@
-  ast_sanity_check code_ast @@ test
-  *)
+  set_result   @@
+  ast_sanity_check code_ast @@ (fun () -> match (None) with 
+                                        | None -> [Section ([Break;Text (Resource_analysis.dir ^ "This is t")],[])]
+                                        | Some x -> [Section ([Break;Text (x ^ "This is t")],[])])
+

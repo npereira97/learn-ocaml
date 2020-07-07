@@ -658,7 +658,7 @@ let main argv =
 
                     (* let lst = analyze_m e env in (*   (f_name * atarg * atres * fun_type_list) list   *)
                     () *)
-                    reply (sig_gen unit_helper string_helper)(fun () -> "This is a test")
+                    reply (sig_gen unit_helper string_helper) (fun () -> "This is a test")
 
 
 

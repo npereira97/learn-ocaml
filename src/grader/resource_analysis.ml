@@ -11,9 +11,9 @@ module Serialize = struct
 
 
 	let log s =
-		let oc = open_out_gen [Open_creat; Open_text; Open_append] 0o640 "a.txt" in
+		let oc = open_out_gen [Open_creat; Open_text; Open_append] 0o640 "log.txt" in
 		output_string oc (s ^ "\n");
-		close_out oc
+		close_out oc; s
 
 
 	type ('a,'b) bridged_function = {
@@ -30,12 +30,12 @@ module Serialize = struct
 	(fun f c ->    
 					f.sexp_of_a  >>
 					to_string >>
-					(fun s -> "echo \'" ^ s ^ "\' |" ^  c ) >>
+					(fun s -> log ("echo \'" ^ s ^ "\' |" ^  c) ) >>
 					(fun s -> try 
 			
-								Some ((Unix.open_process_in >> input_line >> of_string >> (f.b_of_sexp)) s)
+								Some ((Unix.open_process_in >> input_line >> log >> of_string >> (f.b_of_sexp)) s)
 							  with
-							  |_ -> None))
+							  |_ -> log "Failed";None))
 
 
 	
@@ -158,8 +158,25 @@ module Serialize = struct
 
 
 open Serialize
+(* open Learnocaml_report
+
+let please_work = (fun () -> match (None) with 
+                                        | None -> [Section ([Break;Text ((string_of_int (tick ()) ) ^ "This is t")],[])]
+                                        | Some x -> [Section ([Break;Text (x ^ "This is t")],[])])
+ *)
+
+let counter = ref 0
+let tick () =  counter := !counter + 1; !counter 
 
 
-let test =  ask (sig_gen unit_helper string_helper) "/home/neil/final-env-2/learn-ocaml/src/grader/raml-1.4.2/main"
+let cwd = Unix.getcwd
+
+let log_error_raml = Serialize.log
+
+let dir = "Fudge"
+
+let test =  ask (sig_gen unit_helper string_helper) "/home/neil/Documents/learn-ocaml/src/grader/raml-1.4.2/main"
 
 let id = (fun x -> x ^ x)
+
+

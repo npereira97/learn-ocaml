@@ -20,9 +20,18 @@ demo-repository/exercises/*.outcomes
 demo-repository/exercises/*.report.*
 
 www/
-
+/src/grader/raml-1.4.2/clp/
 sync/
 
+
+
+*.cmo
+*.cmx
+*.o
+*.cma 
+*.cmi 
+
+log.txt
 static/icons/*_black.svg
 static/icons/*_dark.svg
 static/icons/*_light.svg
