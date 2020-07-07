@@ -6,6 +6,7 @@
  * Learn-OCaml is distributed under the terms of the MIT license. See the
  * included LICENSE file for details. *)
 
+
 module type S = sig
 
   val set_result : Learnocaml_report.t -> unit

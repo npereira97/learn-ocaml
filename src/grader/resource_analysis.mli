@@ -1,1 +1,2 @@
-val id : 'a -> 'a
+val id : string -> string
+val test : unit -> string option

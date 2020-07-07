@@ -1,5 +1,5 @@
-open Test_lib
-open Report
+open Test_lib 
+open Report 
 
 
 module Style_check = Style_checking.Make ()
@@ -21,7 +21,15 @@ let test () =
 
 
 
-let temp = [Section ([Break;Text ( "This is a test")],[])];;
+
+let s = match Resource_analysis.test () with 
+        | None -> "Womp womp !"
+        | Some x -> x
+ 
+
+
+
+let temp = [Section ([Break;Text (s ^ "This is a test")],[])];;
 
 
 

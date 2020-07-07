@@ -1,4 +1,6 @@
-(* module Serialize = struct 
+
+
+module Serialize = struct 
   open Core_kernel;;
 
 	let (>>) f g = (fun x -> g (f x)) (* Function compostion left to right*)
@@ -22,7 +24,7 @@
 					}
 
 	type command = string
-	type args
+	type args = string
 
 	let ask : ('a,'b) bridged_function -> command -> ('a -> 'b option) = 
 	(fun f c ->    
@@ -155,10 +157,9 @@
   end 
 
 
-open Serialize *)
+open Serialize
 
 
-(* 
-let test = () |> ask (sig_gen unit_helper string_helper) "~/home/neil/final-env-2/learn-ocaml/src/grader/raml-1.4.2/main"
- *)
-let id = (fun x -> x)
+let test =  ask (sig_gen unit_helper string_helper) "/home/neil/final-env-2/learn-ocaml/src/grader/raml-1.4.2/main"
+
+let id = (fun x -> x ^ x)
