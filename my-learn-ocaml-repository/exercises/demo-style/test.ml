@@ -18,18 +18,18 @@ let test () =
   with exn -> [forbidden_construct_msg]
 
 (* Generate the report to be shown to the student *)
-
+(* 
  let log = Resource_analysis.log_error_raml
 
 
 
-let tick = Resource_analysis.tick;;
+let tick = Resource_analysis.tick;; *)
 
 exception Tester
 
 let () =
   set_result   @@
   ast_sanity_check code_ast @@ (fun () -> match (None) with 
-                                        | None -> [Section ([Break;Text (Resource_analysis.dir ^ "This is t")],[])]
+                                        | None -> [Section ([Break;Text ( (Sys.executable_name) ^ "This is t")],[])]
                                         | Some x -> [Section ([Break;Text (x ^ "This is t")],[])])
 

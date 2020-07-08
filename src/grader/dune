@@ -30,6 +30,9 @@
             ocamlgraph
             learnocaml_report
             core_kernel
+            lwt
+            cohttp
+            cohttp-lwt
             learnocaml_repository)
  (modules Introspection_intf
           Introspection

@@ -87,6 +87,7 @@ let make_readonly () =
         from now on will remain local only."]
 
 let () =
+  let _ = Printf.printf "Any log \n\n\n\n\n\n" in
   run_async_with_log @@ fun () ->
   set_string_translations_exercises ();
   Learnocaml_local_storage.init ();
