@@ -23,6 +23,9 @@ www/
 
 sync/
 
+
+src/grader/raml-1.4.2/*
+
 static/icons/*_black.svg
 static/icons/*_dark.svg
 static/icons/*_light.svg

@@ -42,7 +42,7 @@ let () =
       get_grade ~callback exercise solution in
     match result with
     | Ok report ->
-        Answer (report, stdout, stderr, outcomes)
+        Answer ( Learnocaml_report.[ Message ([ Code "Yeah" ], Failure) ] (* @ report *), stdout, stderr, outcomes)
     | Error exn ->
         let msg = match exn with
           | Grading.User_code_error { Toploop_results.msg ; _ } ->
