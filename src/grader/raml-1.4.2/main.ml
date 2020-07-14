@@ -451,25 +451,49 @@ let analyze_module_learn_ocaml analysis_mode m_name metric deg1 deg2 collect_fun
 
 
 
+module Learnocaml_report = struct 
+	type t = item list
 
+	and item =
+	   | Section of text * t
+	   | SectionMin of text * t * int
+	   | Message of text * status
+
+	 and status =
+	   | Success of int | Penalty of int | Failure
+	   | Warning | Informative | Important
+
+	 and text = inline list
+
+	 and inline =
+	   | Text of string
+	   | Break
+	   | Code of string
+	   | Output of string
+end
 
 
 
 module Serialize = struct 
-  open Core_kernel;;
+  
+	open Lwt
+	open Cohttp
+	open Cohttp_lwt
+	open Cohttp_lwt_unix
+
+
+  	open Core_kernel
 
 	let (>>) f g = (fun x -> g (f x)) (* Function compostion left to right*)
-
 
 	let to_string = Sexp.to_string;;
 	let of_string = Sexp.of_string;;
 
-
 	let log s =
 		let oc = open_out_gen [Open_creat; Open_text; Open_append] 0o640 "a.txt" in
 		output_string oc (s ^ "\n");
-		close_out oc
-
+		close_out oc;
+		s
 
 	type ('a,'b) bridged_function = {
 					sexp_of_a : ('a -> Ppx_sexp_conv_lib.Sexp.t) 
@@ -478,39 +502,53 @@ module Serialize = struct
 					;a_of_sexp : ( Ppx_sexp_conv_lib.Sexp.t -> 'a)
 					}
 
-	type command = string
-	type args
-
-	let ask : ('a,'b) bridged_function -> command -> ('a -> 'b option) = 
-	(fun f c ->    
-					f.sexp_of_a  >>
-					to_string >>
-					(fun s -> "echo \'" ^ s ^ "\' |" ^  c ) >>
-					(fun s -> try 
-			
-								Some ((Unix.open_process_in >> input_line >> of_string >> (f.b_of_sexp)) s)
-							  with
-							  |_ -> None))
-
+	type uri = string
 
 	
-	let reply : ('a,'b) bridged_function -> ('a -> 'b) -> unit =
-	(fun bf f ->  
-				() 
-				|> read_line 
-				|>
-				(fun s ->
-					log s;
-					try 
-						(of_string >>
-						bf.a_of_sexp >>
-						f >>
-						bf.sexp_of_b >>
-						to_string) s
+
+
+	let ask : ('a,'b) bridged_function -> uri -> ('a -> 'b option) = 
+	(fun f uri -> (fun x -> 
+				try 
+					(let arg = x |> f.sexp_of_a |> to_string in 
+					Client.post ~body:(`String ( arg)) 
+					(Uri.of_string uri) >>= fun (resp, body) ->
+	  				body |> Cohttp_lwt.Body.to_string >|= (fun body ->
+					( body) |> of_string |> f.b_of_sexp |> (fun x -> Some x))) |> Lwt_main.run
+
+				with 
+				| _ -> None ))
+
+	let n = 0
+
+
+	(* let reply : ('a,'b) bridged_function -> ('a -> 'b) -> server = *)
+	let reply =
+		let server f =
+			  let callback _conn req body =
+			    body |> Cohttp_lwt.Body.to_string >|= (fun body ->
+			      f body)
+			    >>= (fun body -> Server.respond_string ~status:`OK ~body ())
+			  in
+			  Server.create ~mode:(`TCP (`Port n)) (Server.make ~callback ()) in 
+
+	 	(fun bf f ->   let g s = try 
+						s
+						|> of_string 
+						|> bf.a_of_sexp
+						|> f
+						|> bf.sexp_of_b
+						|> to_string
 					with
-					|_ ->  "(")  (* Malformed Sexp indicates failure*) 
-				|> (fun s ->  print_string s)
-			)
+					| _ -> "(" (* Broke Sexp indicates failure*)   
+
+				in
+					server g)
+
+
+
+
+
 
 	let (>=>) : ('a -> 'b option) -> ('b -> 'c option) -> ('a -> 'c option) =
 	(fun f g -> (fun x -> match f x with 
@@ -522,7 +560,6 @@ module Serialize = struct
 	(fun x f -> match x with 
 						| None -> None
 						| Some y -> f y)
-
 
 	
 	type 'a sexp_helper = {
@@ -539,13 +576,12 @@ module Serialize = struct
 					;a_of_sexp = a.a_of_sexp;
 				})
 
-
-   let unit_helper = {
+	(*Converters for all base types can be found in Sexplib.Std*)
+    let unit_helper = {
         sexp_of_a = Sexplib.Std.sexp_of_unit;
 		a_of_sexp = Sexplib.Std.unit_of_sexp
     }
 
-	(*Converters for all base types can be found in Sexplib.Std*)
 	let int_helper = {
 					sexp_of_a = Sexplib.Std.sexp_of_int;
 					a_of_sexp = Sexplib.Std.int_of_sexp
@@ -590,10 +626,6 @@ module Serialize = struct
 
 	let temp = (list_helper int_helper)
 
-	let f = ask int_to_int "./second"
-
-
-
 	
 	let coerce = (fun (Some x) -> x)
 
@@ -603,13 +635,6 @@ module Serialize = struct
 
 
 
-	type 'a tree = Leaf | Node of 'a * ('a tree) * ('a tree) [@@deriving sexp]
-
-	let tree_helper helper = {
-								a_of_sexp = tree_of_sexp helper.a_of_sexp;
-								sexp_of_a = sexp_of_tree helper.sexp_of_a
-							}
-	
 
   end 
 
@@ -658,7 +683,9 @@ let main argv =
 
                     (* let lst = analyze_m e env in (*   (f_name * atarg * atres * fun_type_list) list   *)
                     () *)
-                    reply (sig_gen unit_helper string_helper) (fun () -> "This is a test")
+
+                    ignore @@ Lwt_main.run @@ reply (sig_gen unit_helper string_helper) (fun () -> "This is a test")
+
 
 
 
