@@ -29,6 +29,8 @@ sync/
 *.o
 *.cma 
 *.cmi 
+*.cmxa
+*.opt
 
 log.txt
 

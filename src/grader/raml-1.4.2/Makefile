@@ -7,8 +7,8 @@ include config/Makefile
 
 CAMLC=ocamlc
 CAMLOPT=ocamlopt
-CAMLFINDC=ocamlfind ocamlc -g -linkpkg -thread -rectypes -package core,sexplib,bin_prot,ppx_sexp_conv,ppx_compare,fieldslib,variantslib
-CAMLFINDOPT=ocamlfind ocamlopt -linkpkg -thread -rectypes -package core,sexplib,bin_prot,ppx_sexp_conv,ppx_compare,fieldslib,variantslib
+CAMLFINDC=ocamlfind ocamlc -g -linkpkg -thread -rectypes -package cohttp-lwt-unix,lwt,core,sexplib,bin_prot,ppx_sexp_conv,ppx_compare,fieldslib,variantslib
+CAMLFINDOPT=ocamlfind ocamlopt -linkpkg -thread -rectypes -package cohttp-lwt-unix,lwt,core,sexplib,bin_prot,ppx_sexp_conv,ppx_compare,fieldslib,variantslib
 COMPFLAGS=-strict-sequence -w +33..39 -warn-error -A $(INCLUDES)
 LINKFLAGS=-cclib "-L$(LIBDIRS) -lClp -lCoinUtils"
 CFLAGS=-O2 -Wall -I$(INCDIRS) \
