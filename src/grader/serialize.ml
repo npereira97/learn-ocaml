@@ -160,12 +160,6 @@ open Cohttp_lwt_unix
 
 
 
-	type 'a tree = Leaf | Node of 'a * ('a tree) * ('a tree) [@@deriving sexp]
 
-	let tree_helper helper = {
-								a_of_sexp = tree_of_sexp helper.a_of_sexp;
-								sexp_of_a = sexp_of_tree helper.sexp_of_a
-							}
-	
 
  
