@@ -18,13 +18,11 @@ let temp = [Section ([Text " Resource analysis report "],[Message ([Text "This i
 
 
 
-
-
 let test () =
   try
     let tast = Typed_ast_lib.tast_of_parsetree_structure code_ast in
     let checkers = Style_check.all_checkers () in
-    temp @ (Style_check.ast_style_check_structure checkers tast)
+     (Style_check.ast_style_check_structure checkers tast)
   with exn -> [forbidden_construct_msg]
 
 
@@ -34,6 +32,16 @@ let () =
   ast_sanity_check code_ast @@ test
   
 (*
+
+
+
+
+let g = (fun () -> match Resource_analysis.test1 () with 
+			| None -> [Message ([Text "Womp womp"],Informative)]
+			| Some x -> x) 
+
+
+
 -- type t = item list
 
 -- and item =

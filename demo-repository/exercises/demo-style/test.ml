@@ -16,6 +16,8 @@ let test () =
     Style_check.ast_style_check_structure checkers tast
   with exn -> [forbidden_construct_msg]
 
+let g = Resource_analysis.test
+aa
 (* Generate the report to be shown to the student *)
 let () =
   set_result @@
