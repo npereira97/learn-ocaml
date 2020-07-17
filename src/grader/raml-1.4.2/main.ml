@@ -451,6 +451,27 @@ let analyze_module_learn_ocaml analysis_mode m_name metric deg1 deg2 collect_fun
 
 
 
+module Learnocaml_report = struct 
+	type t = item list
+
+	and item =
+	   | Section of text * t
+	   | SectionMin of text * t * int
+	   | Message of text * status
+
+	 and status =
+	   | Success of int | Penalty of int | Failure
+	   | Warning | Informative | Important
+
+	 and text = inline list
+
+	 and inline =
+	   | Text of string
+	   | Break
+	   | Code of string
+	   | Output of string
+end
+
 
 
 module Serialize = struct 
@@ -595,9 +616,6 @@ module Serialize = struct
 
 
 
-
-
-
 	let int_to_int = (sig_gen int_helper int_helper);;
 	let int_to_string = (sig_gen int_helper string_helper);;
 	let int_to_bool = (sig_gen int_helper bool_helper);;
@@ -608,6 +626,7 @@ module Serialize = struct
 
 	let temp = (list_helper int_helper)
 
+	
 	let coerce = (fun (Some x) -> x)
 
 	let join x = match x with
@@ -615,36 +634,9 @@ module Serialize = struct
 				| Some x -> x
 
 
+
+
   end 
-
-
-  module Learnocaml_report = struct 
-	type t = item list
-
-	and item =
-	   | Section of text * t
-	   | SectionMin of text * t * int
-	   | Message of text * status
-
-	 and status =
-	   | Success of int | Penalty of int | Failure
-	   | Warning | Informative | Important
-
-	 and text = inline list
-
-	 and inline =
-	   | Text of string
-	   | Break
-	   | Code of string
-	   | Output of string [@@deriving sexp]
-
-	   open Serialize
-
-	   let report_helper = {a_of_sexp = t_of_sexp;
-	   						sexp_of_a = sexp_of_t}
-end
-
-
 
 
 open Serialize
@@ -692,8 +684,7 @@ let main argv =
                     (* let lst = analyze_m e env in (*   (f_name * atarg * atres * fun_type_list) list   *)
                     () *)
 
-                    ignore @@ Lwt_main.run @@ reply (sig_gen unit_helper Learnocaml_report.report_helper)
-                    (fun () -> [Message ([Text "hello from RAML"],Warning)])
+                    ignore @@ Lwt_main.run @@ reply (sig_gen unit_helper string_helper) (fun () -> "This is a test")
 
 
 

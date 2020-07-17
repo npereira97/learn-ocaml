@@ -6,8 +6,8 @@
  (wrapped false)
  (flags :standard -w -37-41 -warn-error -27-39)
  (modules Learnocaml_report)
- (preprocess (pps ppx_ocplib_i18n ppx_jane))
- (libraries ocplib-json-typed ocplib_i18n core_kernel)
+ (preprocess (pps ppx_ocplib_i18n))
+ (libraries ocplib-json-typed ocplib_i18n)
 )
 
 
@@ -33,7 +33,6 @@
             lwt
             cohttp
             cohttp-lwt
-            cohttp-lwt-unix
             learnocaml_repository)
  (modules Introspection_intf
           Introspection
