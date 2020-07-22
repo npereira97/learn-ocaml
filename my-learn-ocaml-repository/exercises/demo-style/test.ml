@@ -10,10 +10,11 @@ let forbidden_construct_str =
 let forbidden_construct_msg =
   Message ([Text forbidden_construct_str], Failure)
 
+
 let text_sample = [Text "Resource Analysis report";Break;Break;Code "fun x -> x"]
 let message_sample = Message ([Text "This is an informative message"], Informative)
 let temp = message_sample :: [Section (text_sample,[])]
-let temp = [Section ([Text " Resource analysis report "],[Message ([Text "This is the beginning of the resource analysis output";Break;Break;Break;Output "I'm not sure what this is supposed to do ";Break;Break;Text "Output should end here"],Informative);Message ([Text "This is some sample code";Break;Code " fun x -> x "],Warning);Section ([Text " This is a subsection "],[Message ([Text " You got to the message "],Informative)])])]
+let temp = [Section ([Text ( " (Resource analysis report ")],[Message ([Text "This is the beginning of the resource analysis output";Break;Break;Break;Output "I'm not sure what this is supposed to do ";Break;Break;Text "Output should end here"],Informative);Message ([Text "This is some sample code";Break;Code " fun x -> x "],Warning);Section ([Text " This is a subsection "],[Message ([Text " You got to the message "],Informative)])])]
 
 
 

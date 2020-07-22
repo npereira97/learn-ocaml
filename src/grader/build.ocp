@@ -1,4 +1,3 @@
-  
 begin library "learnocaml-report"
   comp_requires = "ppx_ocplib_i18n:asm"
   files = [

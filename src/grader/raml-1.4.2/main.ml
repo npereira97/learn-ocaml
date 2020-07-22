@@ -533,14 +533,14 @@ module Serialize = struct
 			  Server.create ~mode:(`TCP (`Port n)) (Server.make ~callback ()) in 
 
 	 	(fun bf f ->   let g s = try 
-						s
-						|> of_string 
+						s |> (fun s -> let _ = log ("logged <" ^ s ^ ">\n") in s)
+ 						|> of_string 
 						|> bf.a_of_sexp
 						|> f
 						|> bf.sexp_of_b
-						|> to_string
+						|> to_string |> (fun s -> let _ = log ("Reply <" ^ s ^ ">\n") in s)
 					with
-					| _ -> "(" (* Broke Sexp indicates failure*)   
+					| _ -> "(fail" (* Broke Sexp indicates failure*)   
 
 				in
 					server g)

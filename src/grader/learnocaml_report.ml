@@ -68,7 +68,14 @@ and output_attrs ppf attrs =
     attrs
 
 (* -- report format --------------------------------------------------------- *)
-
+(*
+let list_of_sexp =  Sexplib.Std.list_of_sexp
+let sexp_of_list = Sexplib.Std.sexp_of_list
+let int_of_sexp = Sexplib.Std.int_of_sexp 
+let sexp_of_int = Sexplib.Std.sexp_of_int
+let string_of_sexp = Sexplib.Std.string_of_sexp 
+let sexp_of_string = Sexplib.Std.sexp_of_string
+*)
 type t = item list
 
 and item =
@@ -86,7 +93,7 @@ and inline =
   | Text of string
   | Break
   | Code of string
-  | Output of string
+  | Output of string (*[@@deriving sexp]*)
 
 let result items =
   let rec do_report items =

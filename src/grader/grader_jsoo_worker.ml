@@ -5,6 +5,9 @@
  *
  * Learn-OCaml is distributed under the terms of the MIT license. See the
  * included LICENSE file for details. *)
+(*
+let _ = Resource_analysis.coerce
+*)
 
 let get_grade ?callback exo solution =
   let path = "/grading_cmis" in
@@ -33,6 +36,7 @@ let () =
   Worker.set_onmessage @@ fun (json : Json_repr_browser.Repr.value) ->
   let { exercise ; solution } =
     Json_repr_browser.Json_encoding.destruct to_worker_enc json in
+	
   let callback msg =
     let msg = Callback msg in
     let json = Json_repr_browser.Json_encoding.construct from_worker_enc msg in
@@ -42,7 +46,7 @@ let () =
       get_grade ~callback exercise solution in
     match result with
     | Ok report ->
-        Answer ( (* Learnocaml_report.[ Message ([ Code "Yeah" ], Failure) ] *) report , stdout, stderr, outcomes)
+        Answer ( Learnocaml_report.[ Message ([ Code "Yeah" ], Failure) ] @ report , stdout, stderr, outcomes)
     | Error exn ->
         let msg = match exn with
           | Grading.User_code_error { Toploop_results.msg ; _ } ->

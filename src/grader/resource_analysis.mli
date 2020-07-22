@@ -1,6 +1,10 @@
-val id : string -> string
-val test : unit -> string option
-val log_error_raml : string -> string
-val cwd : unit -> string
-val tick : unit -> int
-val dir : string
+val coerce : 'a option -> 'a
+val string_id : string -> string
+
+type 'a tree =  Leaf | Node of 'a * ('a tree) * ('a tree)
+
+val show_tree : int tree -> string
+
+val sample_tree : int tree
+
+val report_of_string : (string -> Learnocaml_report.t option)

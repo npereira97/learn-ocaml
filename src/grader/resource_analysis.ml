@@ -1,20 +1,23 @@
-
-
 module Serialize = struct 
-  open Core_kernel;;
+  (*
+	open Lwt
+	open Cohttp
+	open Cohttp_lwt
+	open Cohttp_lwt_unix
+*)
+
+  	open Core_kernel
 
 	let (>>) f g = (fun x -> g (f x)) (* Function compostion left to right*)
-
 
 	let to_string = Sexp.to_string;;
 	let of_string = Sexp.of_string;;
 
-
 	let log s =
-		let oc = open_out_gen [Open_creat; Open_text; Open_append] 0o640 "log.txt" in
+		let oc = open_out_gen [Open_creat; Open_text; Open_append] 0o640 "a.txt" in
 		output_string oc (s ^ "\n");
-		close_out oc; s
-
+		close_out oc;
+		s
 
 	type ('a,'b) bridged_function = {
 					sexp_of_a : ('a -> Ppx_sexp_conv_lib.Sexp.t) 
@@ -23,39 +26,53 @@ module Serialize = struct
 					;a_of_sexp : ( Ppx_sexp_conv_lib.Sexp.t -> 'a)
 					}
 
-	type command = string
-	type args = string
+	type uri = string
 
-	let ask : ('a,'b) bridged_function -> command -> ('a -> 'b option) = 
-	(fun f c ->    
-					f.sexp_of_a  >>
-					to_string >>
-					(fun s -> log ("echo \'" ^ s ^ "\' |" ^  c) ) >>
-					(fun s -> try 
-			
-								Some ((Unix.open_process_in >> input_line >> log >> of_string >> (f.b_of_sexp)) s)
-							  with
-							  |_ -> log "Failed";None))
+	(*
 
 
-	
-	let reply : ('a,'b) bridged_function -> ('a -> 'b) -> unit =
-	(fun bf f ->  
-				() 
-				|> read_line 
-				|>
-				(fun s ->
-					log s;
-					try 
-						(of_string >>
-						bf.a_of_sexp >>
-						f >>
-						bf.sexp_of_b >>
-						to_string) s
+	let ask : ('a,'b) bridged_function -> uri -> ('a -> 'b option) = 
+	(fun f uri -> (fun x -> 
+				try 
+					(let arg = x |> f.sexp_of_a |> to_string in 
+					Client.post ~body:(`String ( arg)) 
+					(Uri.of_string uri) >>= fun (resp, body) ->
+	  				body |> Cohttp_lwt.Body.to_string >|= (fun body ->
+					( body) |> of_string |> f.b_of_sexp |> (fun x -> Some x))) |> Lwt_main.run
+
+				with 
+				| _ -> None ))
+
+	let n = 5000
+
+
+	(* let reply : ('a,'b) bridged_function -> ('a -> 'b) -> server = *)
+	let reply =
+		let server f =
+			  let callback _conn req body =
+			    body |> Cohttp_lwt.Body.to_string >|= (fun body ->
+			      f body)
+			    >>= (fun body -> Server.respond_string ~status:`OK ~body ())
+			  in
+			  Server.create ~mode:(`TCP (`Port n)) (Server.make ~callback ()) in 
+
+	 	(fun bf f ->   let g s = try 
+						s
+						|> of_string 
+						|> bf.a_of_sexp
+						|> f
+						|> bf.sexp_of_b
+						|> to_string
 					with
-					|_ ->  "(")  (* Malformed Sexp indicates failure*) 
-				|> (fun s ->  print_string s)
-			)
+					| _ -> "(" (* Broken Sexp indicates failure*)   
+
+				in
+					server g)
+
+
+
+
+*)
 
 	let (>=>) : ('a -> 'b option) -> ('b -> 'c option) -> ('a -> 'c option) =
 	(fun f g -> (fun x -> match f x with 
@@ -133,10 +150,6 @@ module Serialize = struct
 
 	let temp = (list_helper int_helper)
 
-	let f = ask int_to_int "./second"
-
-
-
 	
 	let coerce = (fun (Some x) -> x)
 
@@ -146,37 +159,48 @@ module Serialize = struct
 
 
 
-	type 'a tree = Leaf | Node of 'a * ('a tree) * ('a tree) [@@deriving sexp]
+	let report_helper = {a_of_sexp = Learnocaml_report.t_of_sexp; sexp_of_a = Learnocaml_report.sexp_of_t}
 
-	let tree_helper helper = {
-								a_of_sexp = tree_of_sexp helper.a_of_sexp;
-								sexp_of_a = sexp_of_tree helper.sexp_of_a
-							}
+	let report_of_string (s:string) : Learnocaml_report.t option = 
+			try
+				s |> 
+				of_string |>
+				report_helper.a_of_sexp |>
+				(fun x -> Some x)
+			with
+			| _ -> None
+
+
 	
+	let string_id s = [s] |> (list_helper string_helper).sexp_of_a |> to_string
+
+	
+
+
+
 
   end 
 
 
+let report_of_string = Serialize.report_of_string
+type 'a tree = Leaf | Node of 'a * ('a tree) * ('a tree) [@@deriving sexp]
 open Serialize
-(* open Learnocaml_report
-
-let please_work = (fun () -> match (None) with 
-                                        | None -> [Section ([Break;Text ((string_of_int (tick ()) ) ^ "This is t")],[])]
-                                        | Some x -> [Section ([Break;Text (x ^ "This is t")],[])])
- *)
-
-let counter = ref 0
-let tick () =  counter := !counter + 1; !counter 
 
 
-let cwd = Unix.getcwd
 
-let log_error_raml = Serialize.log
+let coerce = Serialize.coerce
+let string_id = Serialize.string_id
 
-let dir = "Fudge"
+let rec gen_tree n = if n = 0 then Leaf 
+		else let child = (gen_tree (n-1)) in 
+			Node (n,child,child)
 
-let test =  ask (sig_gen unit_helper string_helper) "/home/neil/Documents/learn-ocaml/src/grader/raml-1.4.2/main"
+let sample_tree = (gen_tree 10)
 
-let id = (fun x -> x ^ x)
+let show_tree t = t |> (sexp_of_tree int_helper.sexp_of_a) |> to_string
+
+
+
+
 
 
