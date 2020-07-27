@@ -74,8 +74,8 @@ let sexp_of_list = Sexplib.Std.sexp_of_list
 let int_of_sexp = Sexplib.Std.int_of_sexp 
 let sexp_of_int = Sexplib.Std.sexp_of_int
 let string_of_sexp = Sexplib.Std.string_of_sexp 
-let sexp_of_string = Sexplib.Std.sexp_of_string
-*)
+let sexp_of_string = Sexplib.Std.sexp_of_string *)
+
 type t = item list
 
 and item =

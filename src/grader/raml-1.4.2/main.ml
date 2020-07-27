@@ -451,30 +451,34 @@ let analyze_module_learn_ocaml analysis_mode m_name metric deg1 deg2 collect_fun
 
 
 
-module Learnocaml_report = struct 
-	type t = item list
-
-	and item =
-	   | Section of text * t
-	   | SectionMin of text * t * int
-	   | Message of text * status
-
-	 and status =
-	   | Success of int | Penalty of int | Failure
-	   | Warning | Informative | Important
-
-	 and text = inline list
-
-	 and inline =
-	   | Text of string
-	   | Break
-	   | Code of string
-	   | Output of string
-end
-
-
 
 module Serialize = struct 
+
+
+	
+	module Learnocaml_report = struct 
+
+		open Core_kernel
+
+		type t = item list
+
+		and item =
+		   | Section of text * t
+		   | SectionMin of text * t * int
+		   | Message of text * status
+
+		 and status =
+		   | Success of int | Penalty of int | Failure
+		   | Warning | Informative | Important
+
+		 and text = inline list
+
+		 and inline =
+		   | Text of string
+		   | Break
+		   | Code of string
+		   | Output of string [@@deriving sexp]
+	end
   
 	open Lwt
 	open Cohttp
@@ -528,7 +532,7 @@ module Serialize = struct
 			  let callback _conn req body =
 			    body |> Cohttp_lwt.Body.to_string >|= (fun body ->
 			      f body)
-			    >>= (fun body -> Server.respond_string ~status:`OK ~body ())
+			    >>= (fun body -> (Server.respond_string) ~headers: (Cohttp.Header.init_with "Access-Control-Allow-Origin" "*")  ~status:`OK ~body ())
 			  in
 			  Server.create ~mode:(`TCP (`Port n)) (Server.make ~callback ()) in 
 
@@ -613,6 +617,10 @@ module Serialize = struct
 								}
 
 
+	let report_helper = {sexp_of_a = Learnocaml_report.sexp_of_t;
+				a_of_sexp = Learnocaml_report.t_of_sexp}
+
+
 
 
 
@@ -675,16 +683,19 @@ let main argv =
                     let pmode = Rconfig.Pnone in 
                     
                     (*let analyze_p = analyze_prog analysis_mode m_name metric deg1 deg2 pmode in *)
-                    let analyze_m = analyze_module_learn_ocaml analysis_mode m_name metric deg1 deg2 pmode in
-                    (*let buf = Lexing.from_channel In_channel.stdin in
-                    let _ = Location.init buf "<stdin>" in *) (* read from stdin *)
-                   
-                    (* let (e, env) = Parseraml.parse_raml_module "timed.ml" in *)
+		    let test () = 
+		            let analyze_m = analyze_module_learn_ocaml analysis_mode m_name metric deg1 deg2 pmode in
+		            let buf = Lexing.from_channel In_channel.stdin in
+		            let _ = Location.init buf "<stdin>" in  (* read from stdin *)
+		           
+		            let (e, env) = Parseraml.parse_raml_module "./tests/analyze_array.raml" in 
 
-                    (* let lst = analyze_m e env in (*   (f_name * atarg * atres * fun_type_list) list   *)
-                    () *)
-
-                    ignore @@ Lwt_main.run @@ reply (sig_gen unit_helper string_helper) (fun () -> "This is a test")
+		             let lst = analyze_m e env in  ()(*   (f_name * atarg * atres * fun_type_list) list   
+                    () *) in 
+			let open Learnocaml_report in 
+			let counter = ref 0 in 
+			let read () = counter := !counter + 1; string_of_int (!counter) in
+                    ignore @@ Lwt_main.run @@ reply (sig_gen unit_helper report_helper) (fun () -> let _  = test () in [Section ([Text " Resource analysis report "],[Message ([Text ("You ran the grader " ^ (read ())   ^ " times ")],Informative)])])
 
 
 
