@@ -1,4 +1,4 @@
-
+ 
 let sys_time = Sys.time;;
 
 
@@ -200,7 +200,7 @@ let analyze_prog analysis_mode m_name metric deg1 deg2 collect_fun_types e env =
   analyze_exp deg1 deg2
 
 
-(*
+
 let analyze_module analysis_mode m_name metric deg1 deg2 collect_fun_types m env =
   let amode_name =
     match analysis_mode with
@@ -246,7 +246,7 @@ let analyze_module analysis_mode m_name metric deg1 deg2 collect_fun_types m env
               analyze_f (deg+1) deg_max
             else
               begin
-                let _ = printf "\n  A bound for %s could not be derived. The linear program is infeasible.\n" f_name in
+                let _ = (printf) "\n  A bound for %s could not be derived. The linear program is infeasible.\n" f_name in
                 let constr = Clp.get_num_constraints () in
                 let time = sys_time () -. start_time in
                 printf "\n--";
@@ -312,7 +312,7 @@ let analyze_module analysis_mode m_name metric deg1 deg2 collect_fun_types m env
 
 
 
-*)
+
 
 
 let rec open_implicit_module m env =
@@ -537,8 +537,8 @@ module Serialize = struct
 			  Server.create ~mode:(`TCP (`Port n)) (Server.make ~callback ()) in 
 
 	 	(fun bf f ->   let g s = try 
-						s |> (fun s -> let _ = log ("logged <" ^ s ^ ">\n") in s)
- 						|> of_string 
+						s |> (fun s -> let _ = log ("logged <" ^ s ^ ">\n") in (s))
+ 						|> of_string |> (fun x -> let _ = log ("Converted to sexp :)") in x) 
 						|> bf.a_of_sexp
 						|> f
 						|> bf.sexp_of_b
@@ -647,6 +647,24 @@ module Serialize = struct
   end 
 
 
+
+		(*
+		            let analyze_m = analyze_module_learn_ocaml analysis_mode m_name metric deg1 deg2 pmode in
+		            let buf = Lexing.from_channel In_channel.stdin in
+		            let _ = Location.init buf "<stdin>" in  (* read from stdin *)
+		           
+		            let	(e, env) = Parseraml.parse_raml_module "./tests/analyze_array.raml" in 
+				
+	(*
+			let (e, env) = Parseraml.parse_raml (Lexing.from_string "./tests/analyze_array.raml") in 
+*)
+
+		             let lst = analyze_m e env in  ()(*   (f_name * atarg * atres * fun_type_list) list   
+                    () *) in 
+
+		*)
+
+
 open Serialize
     
 
@@ -682,20 +700,22 @@ let main argv =
                     let deg2 = 4 in (* upper degree *)
                     let pmode = Rconfig.Pnone in 
                     
-                    (*let analyze_p = analyze_prog analysis_mode m_name metric deg1 deg2 pmode in *)
-		    let test () = 
-		            let analyze_m = analyze_module_learn_ocaml analysis_mode m_name metric deg1 deg2 pmode in
-		            let buf = Lexing.from_channel In_channel.stdin in
-		            let _ = Location.init buf "<stdin>" in  (* read from stdin *)
-		           
-		            let (e, env) = Parseraml.parse_raml_module "./tests/analyze_array.raml" in 
+                    let analyze_m = analyze_module analysis_mode m_name metric deg1 deg2 pmode in
+                    let analyze_p = analyze_prog analysis_mode m_name metric deg1 deg2 pmode in
+		    let analyze_code (code:string) = 
+				let (e, env) = Parseraml.parse_raml_module_from_string code in
+				analyze_m e env
+				
+				in 
+	
+			
 
-		             let lst = analyze_m e env in  ()(*   (f_name * atarg * atres * fun_type_list) list   
-                    () *) in 
-			let open Learnocaml_report in 
+			let open Learnocaml_report in
 			let counter = ref 0 in 
 			let read () = counter := !counter + 1; string_of_int (!counter) in
-                    ignore @@ Lwt_main.run @@ reply (sig_gen unit_helper report_helper) (fun () -> let _  = test () in [Section ([Text " Resource analysis report "],[Message ([Text ("You ran the grader " ^ (read ())   ^ " times ")],Informative)])])
+                    ignore @@ Lwt_main.run @@ reply (sig_gen string_helper report_helper) 
+			(fun s ->  let _ = analyze_code s in [Section ([Text " Resource analysis report "],
+							[Message ([Text ( s ^ "\n\nYou ran the grader " ^ (read ())   ^ " times ")],Informative)])])
 
 
 

@@ -56,6 +56,8 @@ let parse_ocaml_from_file_with f file_name =
   let _ = In_channel.close ch
   in typed_expression
 
+let parse_ocaml_from_string str = parse_ocaml_with fst3 (Lexing.from_string str) 
+
 let parse_ocaml = parse_ocaml_with fst3
 
 let parse_ocaml_from_file = parse_ocaml_from_file_with fst3
@@ -146,9 +148,12 @@ let ocaml_to_raml simplify typed_expression = try
         ; if !print_stack_on_exn then printf "%s@," backtrace
         ; exit 2
 
-let parse_raml buf = ocaml_to_raml Simplify.simplify_structure (parse_ocaml buf)
+let parse_raml (buf)  = ocaml_to_raml Simplify.simplify_structure (parse_ocaml buf)
 let parse_raml_from_file file_name =
       ocaml_to_raml Simplify.simplify_structure (parse_ocaml_from_file file_name)
 
 let parse_raml_module file_name =
       ocaml_to_raml Simplify.simplify_module (parse_ocaml_from_file file_name)
+
+let parse_raml_module_from_string (code:string) = 
+	ocaml_to_raml Simplify.simplify_module (parse_ocaml_from_string code)
