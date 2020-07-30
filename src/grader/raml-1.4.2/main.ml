@@ -1,6 +1,6 @@
  
 let sys_time = Sys.time;;
-
+let foldl = List.fold_left
 
 exception Timeout
 (* I suspect that Core shadows the std sys module*)
@@ -199,6 +199,101 @@ let analyze_prog analysis_mode m_name metric deg1 deg2 collect_fun_types e env =
   printf "\n  Trying degree: ";
   analyze_exp deg1 deg2
 
+module Learnocaml_report = struct 
+
+		open Core_kernel
+
+		type t = item list
+
+		and item =
+		   | Section of text * t
+		   | SectionMin of text * t * int
+		   | Message of text * status
+
+		 and status =
+		   | Success of int | Penalty of int | Failure
+		   | Warning | Informative | Important
+
+		 and text = inline list
+
+		 and inline =
+		   | Text of string
+		   | Break
+		   | Code of string
+		   | Output of string [@@deriving sexp]
+end
+
+let format_text s = 	let open Learnocaml_report in 
+			foldl (fun x y -> x @ [Break;y]) [] (List.map (String.split_on_chars ~on:['\n'] s) (fun x -> Text x))
+
+let gen_func_learnocaml_report ?(simple_name=false) ?(indent="")= 
+		let buf = Buffer.create 10000 in
+		let f = Format.formatter_of_buffer buf in
+		let string_of_buf () = 
+					let s = Buffer.contents buf in
+					let _ = Buffer.clear buf in 
+					s in
+					
+		begin
+			fun (fid, atanno, rtanno) -> 
+
+				let arrow_type =
+					let open Annotations in 
+					let open Rtypes in
+				      match atanno.tan_type with
+					| Ttuple ts -> Tarrow (ts, rtanno.tan_type, ())
+					| _ -> raise (Invalid_argument "Expecting tuple type.")
+				    in
+				 let fid = 
+				      if simple_name then
+					match String.lsplit2 fid ~on:'#' with
+					  | None -> fid
+					  | Some (s1,s2) -> s1
+				      else
+					fid
+				    in
+				
+				let (pol, descs) = Polynomials.describe_pol atanno in
+				let fprint_raml_type f t = Pprint.fprint_raml_type ~indent:2 f t in
+    				let type_string = string_of_buf (fprintf f "@.== %s :\n%s%a@." fid indent fprint_raml_type
+ arrow_type) in 
+				let line1 = string_of_buf (fprintf f "\n%sNon-zero annotations of the argument:%a"
+      indent Pprint.fprint_type_anno atanno) in
+				let line2 = string_of_buf (fprintf f "\n%sNon-zero annotations of result:%a"
+      indent Pprint.fprint_type_anno rtanno) in 
+				let bound_title = string_of_buf (fprintf f "\n%sSimplified bound:\n   %s" indent indent) in
+				let polynomial = string_of_buf (Pprint.fprint_polynomial f pol) in
+				let desc = if List.length descs > 0 then
+							let title_where = string_of_buf (fprintf f "\n %swhere" indent) in
+							let desc = string_of_buf (Pprint.fprint_pol_desc f descs) in
+							let _ = fprintf f "\n" in 
+							[title_where;desc] 
+						      else
+							[]
+				in
+					
+				
+				
+				let open Learnocaml_report in
+				let body = 
+					(List.concat (List.map 
+					([("Type: " ^ type_string)
+					
+					; line1 
+					
+					; line2
+					
+					; bound_title
+				
+					; polynomial
+					] @ desc ) format_text))  in 
+				[Section ([Text fid], [Message (body,Informative)] )]
+
+				
+				
+				 
+		end
+	
 
 
 let analyze_module analysis_mode m_name metric deg1 deg2 collect_fun_types m env =
@@ -245,41 +340,48 @@ let analyze_module analysis_mode m_name metric deg1 deg2 collect_fun_types m env
             if deg < deg_max then
               analyze_f (deg+1) deg_max
             else
-              begin
+		
+              let _ = begin
                 let _ = (printf) "\n  A bound for %s could not be derived. The linear program is infeasible.\n" f_name in
                 let constr = Clp.get_num_constraints () in
                 let time = sys_time () -. start_time in
                 printf "\n--";
                 print_data amode_name m_name deg time constr;
-                printf "====\n\n"
-	            end
+                printf "====\n\n"; "Not found";
+	        end in 
+		[]
       | Some (atarg,atres,fun_type_list) ->
               begin
-                
+                let buf = Buffer.create 10000 in
+		let form = Format.formatter_of_buffer buf in
                 printf "\n%!";
-                let _ = Pprint.print_anno_funtype ~indent:("  ") (f_name, atarg, atres) in
+                let _ = Pprint.print_anno_funtype ~output:(form) ~indent:("  ") (f_name, atarg, atres) in
+		let report_A : Learnocaml_report.t = gen_func_learnocaml_report ~indent:("  ") (f_name, atarg, atres) in
                 let constr = Clp.get_num_constraints () in
                 let time = sys_time () -. start_time in
-                printf "--";
-                print_data amode_name m_name deg time constr;
+                let _ = printf "--" in
+                (*print_data amode_name m_name deg time constr;*)
+			let repB = ref [] in 
                       let () =
                         if List.length fun_type_list = 0 then
                           printf "====\n\n" 
                         else
-                    match fun_type_list with
-                    | [] -> ()
-                    | _ ->
-                      begin
-                        let () = printf "-- Function types:\n" in
-                        let print_fun_types atype =
-                          Pprint.print_anno_funtype ~indent:("  ") ~simple_name:true atype
-                        in
-                        let _ = List.iter fun_type_list print_fun_types in
-                              printf "====\n\n"
-                        end
+		
+		            match fun_type_list with
+		            | [] -> ()
+		            | _ ->
+		                let () = printf "-- Function types:\n" in
+		                let print_fun_types atype =
+		                  Pprint.print_anno_funtype ~output:(form)  ~indent:("  ") ~simple_name:true atype
+		                in
+				
+		                let _ = List.iter fun_type_list print_fun_types in
+		                let _ = printf "====\n\n" in
+		                ()
+
                     in
-                        ()
-	            end
+                         report_A
+	           end
     in
     let _ = printf "\n  Trying degree: " in
     analyze_f deg1 deg2
@@ -291,7 +393,7 @@ let analyze_module analysis_mode m_name metric deg1 deg2 collect_fun_types m env
     Actual code that runs the analysis of an individual function, limit execution time to 3 seconds
   *)
   let f  =
-    limit_fun 3
+    limit_fun 3 (*Caps runtime to 3 seconds*)
     (fun (f_name,e) ->
       match e.Expressions.exp_type with
       | Rtypes.Tarrow _ -> Some (analyze_fun f_name e)
@@ -453,33 +555,6 @@ let analyze_module_learn_ocaml analysis_mode m_name metric deg1 deg2 collect_fun
 
 
 module Serialize = struct 
-
-
-	
-	module Learnocaml_report = struct 
-
-		open Core_kernel
-
-		type t = item list
-
-		and item =
-		   | Section of text * t
-		   | SectionMin of text * t * int
-		   | Message of text * status
-
-		 and status =
-		   | Success of int | Penalty of int | Failure
-		   | Warning | Informative | Important
-
-		 and text = inline list
-
-		 and inline =
-		   | Text of string
-		   | Break
-		   | Code of string
-		   | Output of string [@@deriving sexp]
-	end
-  
 	open Lwt
 	open Cohttp
 	open Cohttp_lwt
@@ -702,9 +777,9 @@ let main argv =
                     
                     let analyze_m = analyze_module analysis_mode m_name metric deg1 deg2 pmode in
                     let analyze_p = analyze_prog analysis_mode m_name metric deg1 deg2 pmode in
-		    let analyze_code (code:string) = 
+		    let analyze_code (code:string)  = 
 				let (e, env) = Parseraml.parse_raml_module_from_string code in
-				analyze_m e env
+				foldl (@) [] (analyze_m e env)
 				
 				in 
 	
@@ -714,8 +789,8 @@ let main argv =
 			let counter = ref 0 in 
 			let read () = counter := !counter + 1; string_of_int (!counter) in
                     ignore @@ Lwt_main.run @@ reply (sig_gen string_helper report_helper) 
-			(fun s ->  let _ = analyze_code s in [Section ([Text " Resource analysis report "],
-							[Message ([Text ( "What is going on ?" ^ s ^ s ^ "\n\nYou ran the grader " ^ (read ())   ^ " times ")],Informative)])])
+			(fun s -> (analyze_code s) @ [Section ([Text " Resource analysis report "],
+							[Message ([Text ( "\n\nYou ran the grader " ^ (read ())   ^ " times ")],Informative)])])
 
 
 
