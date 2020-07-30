@@ -85,55 +85,60 @@ let parse_ocaml_module file_name =
 
 let fprint_raml_type f rty = Pprint.fprint_raml_type f rty
 
+
+exception Not_Supported of int
+
 let ocaml_to_raml simplify typed_expression = try
   try let (e, env, cenv) = simplify typed_expression
       in Pprint.set_constr_map cenv; e, env
-      with e -> Errors.report_error std_formatter e; exit 1
+      with e -> Errors.report_error std_formatter e; raise (Not_Supported 1)
+with _ -> raise (Not_Supported 1)
+(*
   with Simplify.Eunsupported_type (loc, t, reason) ->
        printf "Simplify: unsupported type at %a (%s):\n%a\n%s@?"
          Location.print_loc loc reason
          Printtyp.type_expr t
          (if !print_stack_on_exn then (Backtrace.to_string (Backtrace.Exn.most_recent ())) else "")
-     ; exit 2
+     ; raise (Not_Supported 2)
 
      | Simplify.Eunsupported_pattern p ->
        printf "Simplify: unsupported pattern at %a:\n%a\n%s@?"
          Location.print_loc p.Typedtree.pat_loc
          Printtyped.pattern p
          (if !print_stack_on_exn then (Backtrace.to_string (Backtrace.Exn.most_recent ())) else "")
-     ; exit 2
+     ; raise (Not_Supported 2)
 
      | Simplify.Eunsupported_constant (loc, c) ->
        printf "Simplify: unsupported constant at %a:\n%a\n%s@?"
          Location.print_loc loc
          Printast.constant c
          (if !print_stack_on_exn then (Backtrace.to_string (Backtrace.Exn.most_recent ())) else "")
-     ; exit 2
+     ; raise (Not_Supported 2)
 
      | Simplify.Eunsupported_expr e ->
        printf "Simplify: unsupported expression at %a:\n%a\n%s@?"
          Location.print_loc e.Typedtree.exp_loc
          Printtyped.expression e
          (if !print_stack_on_exn then (Backtrace.to_string (Backtrace.Exn.most_recent ())) else "")
-     ; exit 2
+     ; raise (Not_Supported 2)
 
      | Simplify.Eunsupported_primitive s ->
        printf "Simplify: unsupported built-in function: %s\n%s@?"
          s
          (if !print_stack_on_exn then (Backtrace.to_string (Backtrace.Exn.most_recent ())) else "")
-     ; exit 2
+     ; raise (Not_Supported 2)
 
      | Simplify.Eno_main_expression ->
        printf "Simplify: last statement is not an executable expression\n%s@?"
          (if !print_stack_on_exn then (Backtrace.to_string (Backtrace.Exn.most_recent ())) else "")
-     ; exit 2
+     ; raise (Not_Supported 2)
 
     | Simplify.Enot_an_instance (tbase, tinst) ->
       printf "Simplify: type `%a' is not an instance of `%a'@.%s@?"
         fprint_raml_type tinst
         fprint_raml_type tbase
         (if !print_stack_on_exn then (Backtrace.to_string (Backtrace.Exn.most_recent ())) else "")
-     ; exit 2
+     ; raise (Not_Supported 2)
 
    | Simplify.Emonomorphic_var (name, t1, loc1, t2, loc2) ->
      printf ("Monomorphic variable `%s' used with different types:\n@." ^^
@@ -141,12 +146,12 @@ let ocaml_to_raml simplify typed_expression = try
          fprint_raml_type t1 Location.print_loc loc1
          fprint_raml_type t2 Location.print_loc loc2
          (if !print_stack_on_exn then (Backtrace.to_string (Backtrace.Exn.most_recent ())) else "")
-     ; exit 2
+     ; raise (Not_Supported 2)
 
    | e -> let backtrace = (Backtrace.to_string (Backtrace.Exn.most_recent ())) in
           printf "Exception %s\n@?" (Exn.to_string e)
         ; if !print_stack_on_exn then printf "%s@," backtrace
-        ; exit 2
+        ; raise (Not_Supported 2)*)
 
 let parse_raml (buf)  = ocaml_to_raml Simplify.simplify_structure (parse_ocaml buf)
 let parse_raml_from_file file_name =

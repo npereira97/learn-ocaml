@@ -715,7 +715,7 @@ let main argv =
 			let read () = counter := !counter + 1; string_of_int (!counter) in
                     ignore @@ Lwt_main.run @@ reply (sig_gen string_helper report_helper) 
 			(fun s ->  let _ = analyze_code s in [Section ([Text " Resource analysis report "],
-							[Message ([Text ( s ^ "\n\nYou ran the grader " ^ (read ())   ^ " times ")],Informative)])])
+							[Message ([Text ( "What is going on ?" ^ s ^ s ^ "\n\nYou ran the grader " ^ (read ())   ^ " times ")],Informative)])])
 
 
 

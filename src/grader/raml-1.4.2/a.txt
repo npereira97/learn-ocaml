@@ -395,3 +395,3194 @@ logged <"23098098">
 Converted to sexp :)
 Reply <((Section((Text" Resource analysis report "))((Message((Text"23098098\n\nYou ran the grader 3 times "))Informative))))>
 
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"23098098\n\nYou ran the grader 1 times "))Informative))))>
+
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"23098098\n\nYou ran the grader 2 times "))Informative))))>
+
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"23098098\n\nYou ran the grader 3 times "))Informative))))>
+
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"23098098\n\nYou ran the grader 4 times "))Informative))))>
+
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"23098098\n\nYou ran the grader 5 times "))Informative))))>
+
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"23098098\n\nYou ran the grader 6 times "))Informative))))>
+
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"23098098\n\nYou ran the grader 7 times "))Informative))))>
+
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"23098098\n\nYou ran the grader 8 times "))Informative))))>
+
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"23098098\n\nYou ran the grader 9 times "))Informative))))>
+
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"23098098\n\nYou ran the grader 10 times "))Informative))))>
+
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"23098098\n\nYou ran the grader 11 times "))Informative))))>
+
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"23098098\n\nYou ran the grader 12 times "))Informative))))>
+
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"23098098\n\nYou ran the grader 13 times "))Informative))))>
+
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?23098098\n\nYou ran the grader 1 times "))Informative))))>
+
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?23098098\n\nYou ran the grader 2 times "))Informative))))>
+
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?23098098\n\nYou ran the grader 3 times "))Informative))))>
+
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?23098098\n\nYou ran the grader 4 times "))Informative))))>
+
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?23098098\n\nYou ran the grader 5 times "))Informative))))>
+
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?23098098\n\nYou ran the grader 6 times "))Informative))))>
+
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?23098098\n\nYou ran the grader 1 times "))Informative))))>
+
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?2309809823098098\n\nYou ran the grader 1 times "))Informative))))>
+
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?2309809823098098\n\nYou ran the grader 1 times "))Informative))))>
+
+logged <"23098098">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?2309809823098098\n\nYou ran the grader 2 times "))Informative))))>
+
+logged <"exception NotImplemented
+
+(* Type of a binary tree *)
+type tree =
+  | Empty
+  | Node of tree * int * tree
+
+(* An example binary tree *)
+let t = Node (
+    Node (Empty, 1, Empty),
+    2,
+    Node (Empty, 3, Empty)
+  )
+let _ = 1 + 1 + 1
+
+let rec size t =
+  raise NotImplemented
+
+let size_tests = [
+  (* A test case is an input/output pair.
+     This test case asserts that the output of `size Empty` should be `0`.
+  *)
+  (Empty, 0);
+  (* Your additional test cases go here. *)
+]
+
+let rec height t =
+  raise NotImplemented
+
+let height_tests = [
+  (* Your test cases go here. *)
+]
+
+let rec num_leaves t =
+  raise NotImplemented
+
+let num_leaves_tests = [
+  (* Your test cases go here. *)
+]
+">
+
+Converted to sexp :)
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n\nYou ran the grader 1 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n\nYou ran the grader 2 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n\nYou ran the grader 3 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n\nYou ran the grader 4 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n\nYou ran the grader 1 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n\nYou ran the grader 2 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n\nYou ran the grader 3 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n\nYou ran the grader 4 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n\nYou ran the grader 5 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n\nYou ran the grader 6 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n\nYou ran the grader 7 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n\nYou ran the grader 8 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n\nYou ran the grader 9 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n\nYou ran the grader 10 times "))Informative))))>
+
+logged <"exception NotImplemented
+
+(* Type of a binary tree *)
+type tree =
+  | Empty
+  | Node of tree * int * tree
+
+(* An example binary tree *)
+let t = Node (
+    Node (Empty, 1, Empty),
+    2,
+    Node (Empty, 3, Empty)
+  )
+let rec size t =
+  raise NotImplemented
+
+let size_tests = [
+  (* A test case is an input/output pair.
+     This test case asserts that the output of `size Empty` should be `0`.
+  *)
+  (Empty, 0);
+  (* Your additional test cases go here. *)
+]
+
+let rec height t =
+  raise NotImplemented
+
+let height_tests = [
+  (* Your test cases go here. *)
+]
+
+let rec num_leaves t =
+  raise NotImplemented
+
+let num_leaves_tests = [
+  (* Your test cases go here. *)
+]
+">
+
+Converted to sexp :)
+logged <"exception NotImplemented
+
+(* Type of a binary tree *)
+type tree =
+  | Empty
+  | Node of tree * int * tree
+
+(* An example binary tree *)
+let t = Node (
+    Node (Empty, 1, Empty),
+    2,
+    Node (Empty, 3, Empty)
+  )
+let rec size t =
+  raise NotImplemented
+
+let size_tests = [
+  (* A test case is an input/output pair.
+     This test case asserts that the output of `size Empty` should be `0`.
+  *)
+  (Empty, 0);
+  (* Your additional test cases go here. *)
+]
+
+let rec height t =
+  raise NotImplemented
+
+let height_tests = [
+  (* Your test cases go here. *)
+]
+
+let rec num_leaves t =
+  raise NotImplemented
+
+let num_leaves_tests = [
+  (* Your test cases go here. *)
+]
+">
+
+Converted to sexp :)
+logged <"exception NotImplemented
+
+(* Type of a binary tree *)
+type tree =
+  | Empty
+  | Node of tree * int * tree
+
+(* An example binary tree *)
+let t = Node (
+    Node (Empty, 1, Empty),
+    2,
+    Node (Empty, 3, Empty)
+  )
+let rec size t =
+  raise NotImplemented
+
+let size_tests = [
+  (* A test case is an input/output pair.
+     This test case asserts that the output of `size Empty` should be `0`.
+  *)
+  (Empty, 0);
+  (* Your additional test cases go here. *)
+]
+
+let rec height t =
+  raise NotImplemented
+
+let height_tests = [
+  (* Your test cases go here. *)
+]
+
+let rec num_leaves t =
+  raise NotImplemented
+
+let num_leaves_tests = [
+  (* Your test cases go here. *)
+]
+">
+
+Converted to sexp :)
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n\nYou ran the grader 1 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n\nYou ran the grader 2 times "))Informative))))>
+
+logged <"exception NotImplemented
+
+(* Type of a binary tree *)
+type tree =
+  | Empty
+  | Node of tree * int * tree
+
+(* An example binary tree *)
+let t = Node (
+    Node (Empty, 1, Empty),
+    2,
+    Node (Empty, 3, Empty)
+  )
+let _ = 1 + 1 + 1
+
+let rec size t =
+  raise NotImplemented
+
+let size_tests = [
+  (* A test case is an input/output pair.
+     This test case asserts that the output of `size Empty` should be `0`.
+  *)
+  (Empty, 0);
+  (* Your additional test cases go here. *)
+]
+
+let rec height t =
+  raise NotImplemented
+
+let height_tests = [
+  (* Your test cases go here. *)
+]
+
+let rec num_leaves t =
+  raise NotImplemented
+
+let num_leaves_tests = [
+  (* Your test cases go here. *)
+]
+">
+
+Converted to sexp :)
+logged <"exception NotImplemented
+
+(* Type of a binary tree *)
+type tree =
+  | Empty
+  | Node of tree * int * tree
+
+(* An example binary tree *)
+let t = Node (
+    Node (Empty, 1, Empty),
+    2,
+    Node (Empty, 3, Empty)
+  )
+let _ = 1 + 1 + 1
+
+let rec size t =
+  raise NotImplemented
+
+let size_tests = [
+  (* A test case is an input/output pair.
+     This test case asserts that the output of `size Empty` should be `0`.
+  *)
+  (Empty, 0);
+  (* Your additional test cases go here. *)
+]
+
+let rec height t =
+  raise NotImplemented
+
+let height_tests = [
+  (* Your test cases go here. *)
+]
+
+let rec num_leaves t =
+  raise NotImplemented
+
+let num_leaves_tests = [
+  (* Your test cases go here. *)
+]
+">
+
+Converted to sexp :)
+logged <"exception NotImplemented
+
+(* Checking if x divides y, i.e. y is evenly divisble by x *)
+let divides x y =
+  y mod x = 0
+let rec member x l =
+  match l with
+  | [] -> false
+  | y :: ys -> if x = y then true else member x ys
+
+let rec length l =
+  if l = [] then 0
+  else 1 + length (List.tl l)
+
+let rec filter p l =
+  match l with
+  | [] -> []
+  | x :: xs ->
+      if p x then [x] @ filter p xs
+      else filter p xs
+
+let num_multiples x l =
+  length (filter (fun y -> divides x y) l)
+  
+let x = 1">
+
+Converted to sexp :)
+logged <"exception NotImplemented
+
+(* Checking if x divides y, i.e. y is evenly divisble by x *)
+let divides x y =
+  y mod x = 0
+let rec member x l =
+  match l with
+  | [] -> false
+  | y :: ys -> if x = y then true else member x ys
+
+let rec length l =
+  if l = [] then 0
+  else 1 + length (List.tl l)
+
+let rec filter p l =
+  match l with
+  | [] -> []
+  | x :: xs ->
+      if p x then [x] @ filter p xs
+      else filter p xs
+
+let num_multiples x l =
+  length (filter (fun y -> divides x y) l)
+  
+let x = 1">
+
+Converted to sexp :)
+logged <"exception NotImplemented
+
+(* Checking if x divides y, i.e. y is evenly divisble by x *)
+let divides x y =
+  y mod x = 0
+let rec member x l =
+  match l with
+  | [] -> false
+  | y :: ys -> if x = y then true else member x ys
+
+let rec length l =
+  if l = [] then 0
+  else 1 + length (List.tl l)
+
+let rec filter p l =
+  match l with
+  | [] -> []
+  | x :: xs ->
+      if p x then [x] @ filter p xs
+      else filter p xs
+
+let num_multiples x l =
+  length (filter (fun y -> divides x y) l)
+  
+let x = 1">
+
+Converted to sexp :)
+logged <"exception NotImplemented
+
+(* Checking if x divides y, i.e. y is evenly divisble by x *)
+let divides x y =
+  y mod x = 0
+let rec member x l =
+  match l with
+  | [] -> false
+  | y :: ys -> if x = y then true else member x ys
+
+let rec length l =
+  if l = [] then 0
+  else 1 + length (List.tl l)
+
+let rec filter p l =
+  match l with
+  | [] -> []
+  | x :: xs ->
+      if p x then [x] @ filter p xs
+      else filter p xs
+
+let num_multiples x l =
+  length (filter (fun y -> divides x y) l)
+  
+let x = 1">
+
+Converted to sexp :)
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n\nYou ran the grader 3 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+
+    
+type nat = Z | Succ of nat">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype nat = Z | Succ of nat(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype nat = Z | Succ of nat\n\nYou ran the grader 4 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+
+    
+type nat = Z | Succ of nat
+             
+let inc x = Succ x">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype nat = Z | Succ of nat\n             \nlet inc x = Succ x(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype nat = Z | Succ of nat\n             \nlet inc x = Succ x\n\nYou ran the grader 5 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+
+    
+type nat = Z | Succ of nat
+             
+let inc x = Succ x
+    
+    
+let rec add x y = match x with
+  | Z -> y 
+  |Succ s -> add s (Succ y)
+    
+    ">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype nat = Z | Succ of nat\n             \nlet inc x = Succ x\n    \n    \nlet rec add x y = match x with\n  | Z -> y \n  |Succ s -> add s (Succ y)\n    \n    (* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype nat = Z | Succ of nat\n             \nlet inc x = Succ x\n    \n    \nlet rec add x y = match x with\n  | Z -> y \n  |Succ s -> add s (Succ y)\n    \n    \n\nYou ran the grader 6 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+
+    
+type nat = Z | Succ of nat
+             
+let inc x = Succ x
+    
+    
+let rec add x y = match x with
+  | Z -> y 
+  |Succ s -> add s (Succ y)
+    
+    ">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype nat = Z | Succ of nat\n             \nlet inc x = Succ x\n    \n    \nlet rec add x y = match x with\n  | Z -> y \n  |Succ s -> add s (Succ y)\n    \n    (* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype nat = Z | Succ of nat\n             \nlet inc x = Succ x\n    \n    \nlet rec add x y = match x with\n  | Z -> y \n  |Succ s -> add s (Succ y)\n    \n    \n\nYou ran the grader 7 times "))Informative))))>
+
+logged <"exception NotImplemented
+
+(* Type of a binary tree *)
+type tree =
+  | Empty
+  | Node of tree * int * tree
+
+(* An example binary tree *)
+let t = Node (
+    Node (Empty, 1, Empty),
+    2,
+    Node (Empty, 3, Empty)
+  )
+let _ = 1 + 1 + 1
+
+let rec size t =
+  raise NotImplemented
+
+let size_tests = [
+  (* A test case is an input/output pair.
+     This test case asserts that the output of `size Empty` should be `0`.
+  *)
+  (Empty, 0);
+  (* Your additional test cases go here. *)
+]
+
+let rec height t =
+  raise NotImplemented
+
+let height_tests = [
+  (* Your test cases go here. *)
+]
+
+let rec num_leaves t =
+  raise NotImplemented
+
+let num_leaves_tests = [
+  (* Your test cases go here. *)
+]
+">
+
+Converted to sexp :)
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+
+    
+type digit = Zero |  One
+
+type binary = Number of digit * binary | End
+
+type nat = Z | Succ of nat
+
+exception Invalid_operation
+
+
+let rec bin_of_int n =  if n = 0 
+  then Number (Zero,End)
+  else 
+  if n = 1 
+  then Number (One, End)
+  else 
+  if  n mod 2 = 0 
+  then Number (Zero, bin_of_int (n/2))
+  else 
+    Number (One, bin_of_int (n/2))
+                        
+                        
+let rec toList n = match n with 
+  | Number (x,tl) -> x :: (toList tl)
+  | End -> []
+
+let rec toBin xs = match xs with 
+  | [] -> End
+  | x :: xs -> Number (x,toBin xs)
+
+
+let t = toBin [Zero;Zero;One];;
+
+
+let rec inc num = match num with 
+  | Number (Zero,tl) -> Number (One,tl)
+  | Number (One,tl) -> Number (Zero, inc tl)
+  | End -> Number (One,End) 
+
+
+exception Cannot_borrow
+
+let borrow num =    
+
+  let rec helper num = 
+    match num with 
+    | Number (Zero,tl) -> Number (One,helper tl) 
+    | Number (One,tl) -> Number (Zero, tl)
+    | End -> raise Cannot_borrow
+  in (helper num)
+
+
+
+let dec num = match num with  
+  | Number (One, tl) -> Number (Zero,tl)
+  | Number (Zero, tl) -> Number (One, borrow tl) 
+  | End -> End
+
+
+let rec int_of_bin n = match n with
+  | Number (Zero,xs) -> 2 * (int_of_bin xs)
+  | Number (One,xs) -> 2 * (int_of_bin xs) + 1
+  | End -> 0
+
+(* output is (base * carry) *)
+let add_digit : digit -> digit -> digit * digit  = 
+  (fun x y -> match (x,y) with 
+     | (Zero,_) ->  (y,Zero)
+     | (_,Zero) ->   (x,Zero)
+     | (One,One) -> (Zero,One) )
+
+let rec add x y = match (x,y) with
+  | (End,_) -> y
+  | (_,End) -> x 
+  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in
+      let rest = add xs ys in
+      match carry with 
+      | Zero -> Number (base,rest)
+      | One -> Number (base, inc rest)
+
+
+type comparison = EQ | GT | LT 
+
+let compare_digit x y = match (x,y) with
+  | (Zero,One) -> LT 
+  | (One,Zero) -> GT 
+  | _ -> EQ
+
+let rec compare : binary -> binary -> comparison = 
+  (fun x y -> match (x,y) with 
+     | (End,End) -> EQ
+     | (_,End) -> GT 
+     | (End,_) -> LT
+     |Number (x, xs), Number (y, ys) ->   
+         match (compare xs ys) with 
+         | EQ -> compare_digit x y  
+         | LT -> LT 
+         | GT -> GT    
+                                                    
+  )
+
+
+
+let shift_left x = Number (Zero,x)
+
+
+(* Partial function *)
+let shift_right n = match n with 
+  | Number (x,End) -> n
+  | Number (x,xs) -> xs
+
+
+let rec rshift : nat -> (binary -> binary) = 
+  (fun n -> match n with 
+     | Z -> (fun x -> x)
+     | (Succ x) -> let f = (rshift x) in 
+         (fun x -> shift_right (f x)) 
+  )
+
+
+let rec lshift : nat -> (binary -> binary) = 
+  (fun n -> match n with 
+     | Z -> (fun x -> x)
+     | (Succ x) -> let f = (lshift x) in 
+         (fun x -> shift_left (f x)) 
+  )
+
+(* Russian multiplication *)
+(* Cannot derive a bound :( *)
+let rec russ_mult x y = match x with 
+  | Number (Zero,End) -> x
+  | Number (One,End) -> y
+  | Number(Zero,rest) -> russ_mult rest (shift_left y) 
+  | Number (One,rest) -> russ_mult rest (add y (shift_left y))
+
+(* Long multiplication *)
+(* Cannot derive a bound :( *)
+let rec mult x y = match x with 
+  | Number (Zero,End) -> x
+  | Number (One,End) -> y
+  | Number (One,rest) -> add y (mult rest (shift_left y))
+  | Number (Zero,rest) -> mult rest (shift_left y)  
+
+
+
+
+(* To help automate testing
+
+
+let tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))
+
+
+
+
+
+
+let genPairs n = 
+                let half = n / 2 in
+                let rec helper k = 
+                    if k > half 
+                        then []
+                    else 
+                         (k,n-k) :: (helper (k+1))
+                in 
+                    helper 0
+
+let rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) 
+
+*)">
+
+Converted to sexp :)
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+
+    
+type digit = Zero |  One
+
+type binary = Number of digit * binary | End
+
+type nat = Z | Succ of nat
+
+exception Invalid_operation
+
+
+let rec bin_of_int n =  if n = 0 
+  then Number (Zero,End)
+  else 
+  if n = 1 
+  then Number (One, End)
+  else 
+  if  n mod 2 = 0 
+  then Number (Zero, bin_of_int (n/2))
+  else 
+    Number (One, bin_of_int (n/2))
+                        
+                        
+let rec toList n = match n with 
+  | Number (x,tl) -> x :: (toList tl)
+  | End -> []
+
+let rec toBin xs = match xs with 
+  | [] -> End
+  | x :: xs -> Number (x,toBin xs)
+
+
+let t = toBin [Zero;Zero;One];;
+
+
+let rec inc num = match num with 
+  | Number (Zero,tl) -> Number (One,tl)
+  | Number (One,tl) -> Number (Zero, inc tl)
+  | End -> Number (One,End) 
+
+
+exception Cannot_borrow
+
+let borrow num =    
+
+  let rec helper num = 
+    match num with 
+    | Number (Zero,tl) -> Number (One,helper tl) 
+    | Number (One,tl) -> Number (Zero, tl)
+    | End -> raise Cannot_borrow
+  in (helper num)
+
+
+
+let dec num = match num with  
+  | Number (One, tl) -> Number (Zero,tl)
+  | Number (Zero, tl) -> Number (One, borrow tl) 
+  | End -> End
+
+
+let rec int_of_bin n = match n with
+  | Number (Zero,xs) -> 2 * (int_of_bin xs)
+  | Number (One,xs) -> 2 * (int_of_bin xs) + 1
+  | End -> 0
+
+(* output is (base * carry) *)
+let add_digit : digit -> digit -> digit * digit  = 
+  (fun x y -> match (x,y) with 
+     | (Zero,_) ->  (y,Zero)
+     | (_,Zero) ->   (x,Zero)
+     | (One,One) -> (Zero,One) )
+
+let rec add x y = match (x,y) with
+  | (End,_) -> y
+  | (_,End) -> x 
+  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in
+      let rest = add xs ys in
+      match carry with 
+      | Zero -> Number (base,rest)
+      | One -> Number (base, inc rest)
+
+
+type comparison = EQ | GT | LT 
+
+let compare_digit x y = match (x,y) with
+  | (Zero,One) -> LT 
+  | (One,Zero) -> GT 
+  | _ -> EQ
+
+let rec compare : binary -> binary -> comparison = 
+  (fun x y -> match (x,y) with 
+     | (End,End) -> EQ
+     | (_,End) -> GT 
+     | (End,_) -> LT
+     |Number (x, xs), Number (y, ys) ->   
+         match (compare xs ys) with 
+         | EQ -> compare_digit x y  
+         | LT -> LT 
+         | GT -> GT    
+                                                    
+  )
+
+
+
+let shift_left x = Number (Zero,x)
+
+
+(* Partial function *)
+let shift_right n = match n with 
+  | Number (x,End) -> n
+  | Number (x,xs) -> xs
+
+
+let rec rshift : nat -> (binary -> binary) = 
+  (fun n -> match n with 
+     | Z -> (fun x -> x)
+     | (Succ x) -> let f = (rshift x) in 
+         (fun x -> shift_right (f x)) 
+  )
+
+
+let rec lshift : nat -> (binary -> binary) = 
+  (fun n -> match n with 
+     | Z -> (fun x -> x)
+     | (Succ x) -> let f = (lshift x) in 
+         (fun x -> shift_left (f x)) 
+  )
+
+(* Russian multiplication *)
+(* Cannot derive a bound :( *)
+let rec russ_mult x y = match x with 
+  | Number (Zero,End) -> x
+  | Number (One,End) -> y
+  | Number(Zero,rest) -> russ_mult rest (shift_left y) 
+  | Number (One,rest) -> russ_mult rest (add y (shift_left y))
+
+(* Long multiplication *)
+(* Cannot derive a bound :( *)
+let rec mult x y = match x with 
+  | Number (Zero,End) -> x
+  | Number (One,End) -> y
+  | Number (One,rest) -> add y (mult rest (shift_left y))
+  | Number (Zero,rest) -> mult rest (shift_left y)  
+
+
+
+
+(* To help automate testing
+
+
+let tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))
+
+
+
+
+
+
+let genPairs n = 
+                let half = n / 2 in
+                let rec helper k = 
+                    if k > half 
+                        then []
+                    else 
+                         (k,n-k) :: (helper (k+1))
+                in 
+                    helper 0
+
+let rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) 
+
+*)">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype digit = Zero |  One\n\ntype binary = Number of digit * binary | End\n\ntype nat = Z | Succ of nat\n\nexception Invalid_operation\n\n\nlet rec bin_of_int n =  if n = 0 \n  then Number (Zero,End)\n  else \n  if n = 1 \n  then Number (One, End)\n  else \n  if  n mod 2 = 0 \n  then Number (Zero, bin_of_int (n/2))\n  else \n    Number (One, bin_of_int (n/2))\n                        \n                        \nlet rec toList n = match n with \n  | Number (x,tl) -> x :: (toList tl)\n  | End -> []\n\nlet rec toBin xs = match xs with \n  | [] -> End\n  | x :: xs -> Number (x,toBin xs)\n\n\nlet t = toBin [Zero;Zero;One];;\n\n\nlet rec inc num = match num with \n  | Number (Zero,tl) -> Number (One,tl)\n  | Number (One,tl) -> Number (Zero, inc tl)\n  | End -> Number (One,End) \n\n\nexception Cannot_borrow\n\nlet borrow num =    \n\n  let rec helper num = \n    match num with \n    | Number (Zero,tl) -> Number (One,helper tl) \n    | Number (One,tl) -> Number (Zero, tl)\n    | End -> raise Cannot_borrow\n  in (helper num)\n\n\n\nlet dec num = match num with  \n  | Number (One, tl) -> Number (Zero,tl)\n  | Number (Zero, tl) -> Number (One, borrow tl) \n  | End -> End\n\n\nlet rec int_of_bin n = match n with\n  | Number (Zero,xs) -> 2 * (int_of_bin xs)\n  | Number (One,xs) -> 2 * (int_of_bin xs) + 1\n  | End -> 0\n\n(* output is (base * carry) *)\nlet add_digit : digit -> digit -> digit * digit  = \n  (fun x y -> match (x,y) with \n     | (Zero,_) ->  (y,Zero)\n     | (_,Zero) ->   (x,Zero)\n     | (One,One) -> (Zero,One) )\n\nlet rec add x y = match (x,y) with\n  | (End,_) -> y\n  | (_,End) -> x \n  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in\n      let rest = add xs ys in\n      match carry with \n      | Zero -> Number (base,rest)\n      | One -> Number (base, inc rest)\n\n\ntype comparison = EQ | GT | LT \n\nlet compare_digit x y = match (x,y) with\n  | (Zero,One) -> LT \n  | (One,Zero) -> GT \n  | _ -> EQ\n\nlet rec compare : binary -> binary -> comparison = \n  (fun x y -> match (x,y) with \n     | (End,End) -> EQ\n     | (_,End) -> GT \n     | (End,_) -> LT\n     |Number (x, xs), Number (y, ys) ->   \n         match (compare xs ys) with \n         | EQ -> compare_digit x y  \n         | LT -> LT \n         | GT -> GT    \n                                                    \n  )\n\n\n\nlet shift_left x = Number (Zero,x)\n\n\n(* Partial function *)\nlet shift_right n = match n with \n  | Number (x,End) -> n\n  | Number (x,xs) -> xs\n\n\nlet rec rshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (rshift x) in \n         (fun x -> shift_right (f x)) \n  )\n\n\nlet rec lshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (lshift x) in \n         (fun x -> shift_left (f x)) \n  )\n\n(* Russian multiplication *)\n(* Cannot derive a bound :( *)\nlet rec russ_mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number(Zero,rest) -> russ_mult rest (shift_left y) \n  | Number (One,rest) -> russ_mult rest (add y (shift_left y))\n\n(* Long multiplication *)\n(* Cannot derive a bound :( *)\nlet rec mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number (One,rest) -> add y (mult rest (shift_left y))\n  | Number (Zero,rest) -> mult rest (shift_left y)  \n\n\n\n\n(* To help automate testing\n\n\nlet tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))\n\n\n\n\n\n\nlet genPairs n = \n                let half = n / 2 in\n                let rec helper k = \n                    if k > half \n                        then []\n                    else \n                         (k,n-k) :: (helper (k+1))\n                in \n                    helper 0\n\nlet rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) \n\n*)(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype digit = Zero |  One\n\ntype binary = Number of digit * binary | End\n\ntype nat = Z | Succ of nat\n\nexception Invalid_operation\n\n\nlet rec bin_of_int n =  if n = 0 \n  then Number (Zero,End)\n  else \n  if n = 1 \n  then Number (One, End)\n  else \n  if  n mod 2 = 0 \n  then Number (Zero, bin_of_int (n/2))\n  else \n    Number (One, bin_of_int (n/2))\n                        \n                        \nlet rec toList n = match n with \n  | Number (x,tl) -> x :: (toList tl)\n  | End -> []\n\nlet rec toBin xs = match xs with \n  | [] -> End\n  | x :: xs -> Number (x,toBin xs)\n\n\nlet t = toBin [Zero;Zero;One];;\n\n\nlet rec inc num = match num with \n  | Number (Zero,tl) -> Number (One,tl)\n  | Number (One,tl) -> Number (Zero, inc tl)\n  | End -> Number (One,End) \n\n\nexception Cannot_borrow\n\nlet borrow num =    \n\n  let rec helper num = \n    match num with \n    | Number (Zero,tl) -> Number (One,helper tl) \n    | Number (One,tl) -> Number (Zero, tl)\n    | End -> raise Cannot_borrow\n  in (helper num)\n\n\n\nlet dec num = match num with  \n  | Number (One, tl) -> Number (Zero,tl)\n  | Number (Zero, tl) -> Number (One, borrow tl) \n  | End -> End\n\n\nlet rec int_of_bin n = match n with\n  | Number (Zero,xs) -> 2 * (int_of_bin xs)\n  | Number (One,xs) -> 2 * (int_of_bin xs) + 1\n  | End -> 0\n\n(* output is (base * carry) *)\nlet add_digit : digit -> digit -> digit * digit  = \n  (fun x y -> match (x,y) with \n     | (Zero,_) ->  (y,Zero)\n     | (_,Zero) ->   (x,Zero)\n     | (One,One) -> (Zero,One) )\n\nlet rec add x y = match (x,y) with\n  | (End,_) -> y\n  | (_,End) -> x \n  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in\n      let rest = add xs ys in\n      match carry with \n      | Zero -> Number (base,rest)\n      | One -> Number (base, inc rest)\n\n\ntype comparison = EQ | GT | LT \n\nlet compare_digit x y = match (x,y) with\n  | (Zero,One) -> LT \n  | (One,Zero) -> GT \n  | _ -> EQ\n\nlet rec compare : binary -> binary -> comparison = \n  (fun x y -> match (x,y) with \n     | (End,End) -> EQ\n     | (_,End) -> GT \n     | (End,_) -> LT\n     |Number (x, xs), Number (y, ys) ->   \n         match (compare xs ys) with \n         | EQ -> compare_digit x y  \n         | LT -> LT \n         | GT -> GT    \n                                                    \n  )\n\n\n\nlet shift_left x = Number (Zero,x)\n\n\n(* Partial function *)\nlet shift_right n = match n with \n  | Number (x,End) -> n\n  | Number (x,xs) -> xs\n\n\nlet rec rshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (rshift x) in \n         (fun x -> shift_right (f x)) \n  )\n\n\nlet rec lshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (lshift x) in \n         (fun x -> shift_left (f x)) \n  )\n\n(* Russian multiplication *)\n(* Cannot derive a bound :( *)\nlet rec russ_mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number(Zero,rest) -> russ_mult rest (shift_left y) \n  | Number (One,rest) -> russ_mult rest (add y (shift_left y))\n\n(* Long multiplication *)\n(* Cannot derive a bound :( *)\nlet rec mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number (One,rest) -> add y (mult rest (shift_left y))\n  | Number (Zero,rest) -> mult rest (shift_left y)  \n\n\n\n\n(* To help automate testing\n\n\nlet tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))\n\n\n\n\n\n\nlet genPairs n = \n                let half = n / 2 in\n                let rec helper k = \n                    if k > half \n                        then []\n                    else \n                         (k,n-k) :: (helper (k+1))\n                in \n                    helper 0\n\nlet rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) \n\n*)\n\nYou ran the grader 8 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+
+    
+type digit = Zero |  One
+
+type binary = Number of digit * binary | End
+
+type nat = Z | Succ of nat
+
+exception Invalid_operation
+
+
+let rec bin_of_int n =  if n = 0 
+  then Number (Zero,End)
+  else 
+  if n = 1 
+  then Number (One, End)
+  else 
+  if  n mod 2 = 0 
+  then Number (Zero, bin_of_int (n/2))
+  else 
+    Number (One, bin_of_int (n/2))
+                        
+                        
+let rec toList n = match n with 
+  | Number (x,tl) -> x :: (toList tl)
+  | End -> []
+
+let rec toBin xs = match xs with 
+  | [] -> End
+  | x :: xs -> Number (x,toBin xs)
+
+
+let t = toBin [Zero;Zero;One];;
+
+
+let rec inc num = match num with 
+  | Number (Zero,tl) -> Number (One,tl)
+  | Number (One,tl) -> Number (Zero, inc tl)
+  | End -> Number (One,End) 
+
+
+exception Cannot_borrow
+
+let borrow num =    
+
+  let rec helper num = 
+    match num with 
+    | Number (Zero,tl) -> Number (One,helper tl) 
+    | Number (One,tl) -> Number (Zero, tl)
+    | End -> raise Cannot_borrow
+  in (helper num)
+
+
+
+let dec num = match num with  
+  | Number (One, tl) -> Number (Zero,tl)
+  | Number (Zero, tl) -> Number (One, borrow tl) 
+  | End -> End
+
+
+let rec int_of_bin n = match n with
+  | Number (Zero,xs) -> 2 * (int_of_bin xs)
+  | Number (One,xs) -> 2 * (int_of_bin xs) + 1
+  | End -> 0
+
+(* output is (base * carry) *)
+let add_digit : digit -> digit -> digit * digit  = 
+  (fun x y -> match (x,y) with 
+     | (Zero,_) ->  (y,Zero)
+     | (_,Zero) ->   (x,Zero)
+     | (One,One) -> (Zero,One) )
+
+let rec add x y = match (x,y) with
+  | (End,_) -> y
+  | (_,End) -> x 
+  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in
+      let rest = add xs ys in
+      match carry with 
+      | Zero -> Number (base,rest)
+      | One -> Number (base, inc rest)
+
+
+type comparison = EQ | GT | LT 
+
+let compare_digit x y = match (x,y) with
+  | (Zero,One) -> LT 
+  | (One,Zero) -> GT 
+  | _ -> EQ
+
+let rec compare : binary -> binary -> comparison = 
+  (fun x y -> match (x,y) with 
+     | (End,End) -> EQ
+     | (_,End) -> GT 
+     | (End,_) -> LT
+     |Number (x, xs), Number (y, ys) ->   
+         match (compare xs ys) with 
+         | EQ -> compare_digit x y  
+         | LT -> LT 
+         | GT -> GT    
+                                                    
+  )
+
+
+
+let shift_left x = Number (Zero,x)
+
+
+(* Partial function *)
+let shift_right n = match n with 
+  | Number (x,End) -> n
+  | Number (x,xs) -> xs
+
+
+let rec rshift : nat -> (binary -> binary) = 
+  (fun n -> match n with 
+     | Z -> (fun x -> x)
+     | (Succ x) -> let f = (rshift x) in 
+         (fun x -> shift_right (f x)) 
+  )
+
+
+let rec lshift : nat -> (binary -> binary) = 
+  (fun n -> match n with 
+     | Z -> (fun x -> x)
+     | (Succ x) -> let f = (lshift x) in 
+         (fun x -> shift_left (f x)) 
+  )
+
+(* Russian multiplication *)
+(* Cannot derive a bound :( *)
+let rec russ_mult x y = match x with 
+  | Number (Zero,End) -> x
+  | Number (One,End) -> y
+  | Number(Zero,rest) -> russ_mult rest (shift_left y) 
+  | Number (One,rest) -> russ_mult rest (add y (shift_left y))
+
+(* Long multiplication *)
+(* Cannot derive a bound :( *)
+let rec mult x y = match x with 
+  | Number (Zero,End) -> x
+  | Number (One,End) -> y
+  | Number (One,rest) -> add y (mult rest (shift_left y))
+  | Number (Zero,rest) -> mult rest (shift_left y)  
+
+
+
+
+(* To help automate testing
+
+
+let tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))
+
+
+
+
+
+
+let genPairs n = 
+                let half = n / 2 in
+                let rec helper k = 
+                    if k > half 
+                        then []
+                    else 
+                         (k,n-k) :: (helper (k+1))
+                in 
+                    helper 0
+
+let rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) 
+
+*)">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype digit = Zero |  One\n\ntype binary = Number of digit * binary | End\n\ntype nat = Z | Succ of nat\n\nexception Invalid_operation\n\n\nlet rec bin_of_int n =  if n = 0 \n  then Number (Zero,End)\n  else \n  if n = 1 \n  then Number (One, End)\n  else \n  if  n mod 2 = 0 \n  then Number (Zero, bin_of_int (n/2))\n  else \n    Number (One, bin_of_int (n/2))\n                        \n                        \nlet rec toList n = match n with \n  | Number (x,tl) -> x :: (toList tl)\n  | End -> []\n\nlet rec toBin xs = match xs with \n  | [] -> End\n  | x :: xs -> Number (x,toBin xs)\n\n\nlet t = toBin [Zero;Zero;One];;\n\n\nlet rec inc num = match num with \n  | Number (Zero,tl) -> Number (One,tl)\n  | Number (One,tl) -> Number (Zero, inc tl)\n  | End -> Number (One,End) \n\n\nexception Cannot_borrow\n\nlet borrow num =    \n\n  let rec helper num = \n    match num with \n    | Number (Zero,tl) -> Number (One,helper tl) \n    | Number (One,tl) -> Number (Zero, tl)\n    | End -> raise Cannot_borrow\n  in (helper num)\n\n\n\nlet dec num = match num with  \n  | Number (One, tl) -> Number (Zero,tl)\n  | Number (Zero, tl) -> Number (One, borrow tl) \n  | End -> End\n\n\nlet rec int_of_bin n = match n with\n  | Number (Zero,xs) -> 2 * (int_of_bin xs)\n  | Number (One,xs) -> 2 * (int_of_bin xs) + 1\n  | End -> 0\n\n(* output is (base * carry) *)\nlet add_digit : digit -> digit -> digit * digit  = \n  (fun x y -> match (x,y) with \n     | (Zero,_) ->  (y,Zero)\n     | (_,Zero) ->   (x,Zero)\n     | (One,One) -> (Zero,One) )\n\nlet rec add x y = match (x,y) with\n  | (End,_) -> y\n  | (_,End) -> x \n  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in\n      let rest = add xs ys in\n      match carry with \n      | Zero -> Number (base,rest)\n      | One -> Number (base, inc rest)\n\n\ntype comparison = EQ | GT | LT \n\nlet compare_digit x y = match (x,y) with\n  | (Zero,One) -> LT \n  | (One,Zero) -> GT \n  | _ -> EQ\n\nlet rec compare : binary -> binary -> comparison = \n  (fun x y -> match (x,y) with \n     | (End,End) -> EQ\n     | (_,End) -> GT \n     | (End,_) -> LT\n     |Number (x, xs), Number (y, ys) ->   \n         match (compare xs ys) with \n         | EQ -> compare_digit x y  \n         | LT -> LT \n         | GT -> GT    \n                                                    \n  )\n\n\n\nlet shift_left x = Number (Zero,x)\n\n\n(* Partial function *)\nlet shift_right n = match n with \n  | Number (x,End) -> n\n  | Number (x,xs) -> xs\n\n\nlet rec rshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (rshift x) in \n         (fun x -> shift_right (f x)) \n  )\n\n\nlet rec lshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (lshift x) in \n         (fun x -> shift_left (f x)) \n  )\n\n(* Russian multiplication *)\n(* Cannot derive a bound :( *)\nlet rec russ_mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number(Zero,rest) -> russ_mult rest (shift_left y) \n  | Number (One,rest) -> russ_mult rest (add y (shift_left y))\n\n(* Long multiplication *)\n(* Cannot derive a bound :( *)\nlet rec mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number (One,rest) -> add y (mult rest (shift_left y))\n  | Number (Zero,rest) -> mult rest (shift_left y)  \n\n\n\n\n(* To help automate testing\n\n\nlet tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))\n\n\n\n\n\n\nlet genPairs n = \n                let half = n / 2 in\n                let rec helper k = \n                    if k > half \n                        then []\n                    else \n                         (k,n-k) :: (helper (k+1))\n                in \n                    helper 0\n\nlet rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) \n\n*)(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype digit = Zero |  One\n\ntype binary = Number of digit * binary | End\n\ntype nat = Z | Succ of nat\n\nexception Invalid_operation\n\n\nlet rec bin_of_int n =  if n = 0 \n  then Number (Zero,End)\n  else \n  if n = 1 \n  then Number (One, End)\n  else \n  if  n mod 2 = 0 \n  then Number (Zero, bin_of_int (n/2))\n  else \n    Number (One, bin_of_int (n/2))\n                        \n                        \nlet rec toList n = match n with \n  | Number (x,tl) -> x :: (toList tl)\n  | End -> []\n\nlet rec toBin xs = match xs with \n  | [] -> End\n  | x :: xs -> Number (x,toBin xs)\n\n\nlet t = toBin [Zero;Zero;One];;\n\n\nlet rec inc num = match num with \n  | Number (Zero,tl) -> Number (One,tl)\n  | Number (One,tl) -> Number (Zero, inc tl)\n  | End -> Number (One,End) \n\n\nexception Cannot_borrow\n\nlet borrow num =    \n\n  let rec helper num = \n    match num with \n    | Number (Zero,tl) -> Number (One,helper tl) \n    | Number (One,tl) -> Number (Zero, tl)\n    | End -> raise Cannot_borrow\n  in (helper num)\n\n\n\nlet dec num = match num with  \n  | Number (One, tl) -> Number (Zero,tl)\n  | Number (Zero, tl) -> Number (One, borrow tl) \n  | End -> End\n\n\nlet rec int_of_bin n = match n with\n  | Number (Zero,xs) -> 2 * (int_of_bin xs)\n  | Number (One,xs) -> 2 * (int_of_bin xs) + 1\n  | End -> 0\n\n(* output is (base * carry) *)\nlet add_digit : digit -> digit -> digit * digit  = \n  (fun x y -> match (x,y) with \n     | (Zero,_) ->  (y,Zero)\n     | (_,Zero) ->   (x,Zero)\n     | (One,One) -> (Zero,One) )\n\nlet rec add x y = match (x,y) with\n  | (End,_) -> y\n  | (_,End) -> x \n  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in\n      let rest = add xs ys in\n      match carry with \n      | Zero -> Number (base,rest)\n      | One -> Number (base, inc rest)\n\n\ntype comparison = EQ | GT | LT \n\nlet compare_digit x y = match (x,y) with\n  | (Zero,One) -> LT \n  | (One,Zero) -> GT \n  | _ -> EQ\n\nlet rec compare : binary -> binary -> comparison = \n  (fun x y -> match (x,y) with \n     | (End,End) -> EQ\n     | (_,End) -> GT \n     | (End,_) -> LT\n     |Number (x, xs), Number (y, ys) ->   \n         match (compare xs ys) with \n         | EQ -> compare_digit x y  \n         | LT -> LT \n         | GT -> GT    \n                                                    \n  )\n\n\n\nlet shift_left x = Number (Zero,x)\n\n\n(* Partial function *)\nlet shift_right n = match n with \n  | Number (x,End) -> n\n  | Number (x,xs) -> xs\n\n\nlet rec rshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (rshift x) in \n         (fun x -> shift_right (f x)) \n  )\n\n\nlet rec lshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (lshift x) in \n         (fun x -> shift_left (f x)) \n  )\n\n(* Russian multiplication *)\n(* Cannot derive a bound :( *)\nlet rec russ_mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number(Zero,rest) -> russ_mult rest (shift_left y) \n  | Number (One,rest) -> russ_mult rest (add y (shift_left y))\n\n(* Long multiplication *)\n(* Cannot derive a bound :( *)\nlet rec mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number (One,rest) -> add y (mult rest (shift_left y))\n  | Number (Zero,rest) -> mult rest (shift_left y)  \n\n\n\n\n(* To help automate testing\n\n\nlet tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))\n\n\n\n\n\n\nlet genPairs n = \n                let half = n / 2 in\n                let rec helper k = \n                    if k > half \n                        then []\n                    else \n                         (k,n-k) :: (helper (k+1))\n                in \n                    helper 0\n\nlet rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) \n\n*)\n\nYou ran the grader 9 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+
+    
+type digit = Zero |  One
+
+type binary = Number of digit * binary | End
+
+type nat = Z | Succ of nat
+
+exception Invalid_operation
+
+
+let rec bin_of_int n =  if n = 0 
+  then Number (Zero,End)
+  else 
+  if n = 1 
+  then Number (One, End)
+  else 
+  if  n mod 2 = 0 
+  then Number (Zero, bin_of_int (n/2))
+  else 
+    Number (One, bin_of_int (n/2))
+                        
+                        
+let rec toList n = match n with 
+  | Number (x,tl) -> x :: (toList tl)
+  | End -> []
+
+let rec toBin xs = match xs with 
+  | [] -> End
+  | x :: xs -> Number (x,toBin xs)
+
+
+let t = toBin [Zero;Zero;One];;
+
+
+let rec inc num = match num with 
+  | Number (Zero,tl) -> Number (One,tl)
+  | Number (One,tl) -> Number (Zero, inc tl)
+  | End -> Number (One,End) 
+
+
+exception Cannot_borrow
+
+let borrow num =    
+
+  let rec helper num = 
+    match num with 
+    | Number (Zero,tl) -> Number (One,helper tl) 
+    | Number (One,tl) -> Number (Zero, tl)
+    | End -> raise Cannot_borrow
+  in (helper num)
+
+
+
+let dec num = match num with  
+  | Number (One, tl) -> Number (Zero,tl)
+  | Number (Zero, tl) -> Number (One, borrow tl) 
+  | End -> End
+
+
+let rec int_of_bin n = match n with
+  | Number (Zero,xs) -> 2 * (int_of_bin xs)
+  | Number (One,xs) -> 2 * (int_of_bin xs) + 1
+  | End -> 0
+
+(* output is (base * carry) *)
+let add_digit : digit -> digit -> digit * digit  = 
+  (fun x y -> match (x,y) with 
+     | (Zero,_) ->  (y,Zero)
+     | (_,Zero) ->   (x,Zero)
+     | (One,One) -> (Zero,One) )
+
+let rec add x y = match (x,y) with
+  | (End,_) -> y
+  | (_,End) -> x 
+  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in
+      let rest = add xs ys in
+      match carry with 
+      | Zero -> Number (base,rest)
+      | One -> Number (base, inc rest)
+
+
+type comparison = EQ | GT | LT 
+
+let compare_digit x y = match (x,y) with
+  | (Zero,One) -> LT 
+  | (One,Zero) -> GT 
+  | _ -> EQ
+
+let rec compare : binary -> binary -> comparison = 
+  (fun x y -> match (x,y) with 
+     | (End,End) -> EQ
+     | (_,End) -> GT 
+     | (End,_) -> LT
+     |Number (x, xs), Number (y, ys) ->   
+         match (compare xs ys) with 
+         | EQ -> compare_digit x y  
+         | LT -> LT 
+         | GT -> GT    
+                                                    
+  )
+
+
+
+let shift_left x = Number (Zero,x)
+
+
+(* Partial function *)
+let shift_right n = match n with 
+  | Number (x,End) -> n
+  | Number (x,xs) -> xs
+
+
+let rec rshift : nat -> (binary -> binary) = 
+  (fun n -> match n with 
+     | Z -> (fun x -> x)
+     | (Succ x) -> let f = (rshift x) in 
+         (fun x -> shift_right (f x)) 
+  )
+
+
+let rec lshift : nat -> (binary -> binary) = 
+  (fun n -> match n with 
+     | Z -> (fun x -> x)
+     | (Succ x) -> let f = (lshift x) in 
+         (fun x -> shift_left (f x)) 
+  )
+
+(* Russian multiplication *)
+(* Cannot derive a bound :( *)
+let rec russ_mult x y = match x with 
+  | Number (Zero,End) -> x
+  | Number (One,End) -> y
+  | Number(Zero,rest) -> russ_mult rest (shift_left y) 
+  | Number (One,rest) -> russ_mult rest (add y (shift_left y))
+
+(* Long multiplication *)
+(* Cannot derive a bound :( *)
+let rec mult x y = match x with 
+  | Number (Zero,End) -> x
+  | Number (One,End) -> y
+  | Number (One,rest) -> add y (mult rest (shift_left y))
+  | Number (Zero,rest) -> mult rest (shift_left y)  
+
+
+
+
+(* To help automate testing
+
+
+let tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))
+
+
+
+
+
+
+let genPairs n = 
+let half = n / 2 in
+let rec helper k = 
+if k > half 
+then []
+else 
+(k,n-k) :: (helper (k+1))
+in 
+helper 0
+
+let rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) 
+
+*)">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype digit = Zero |  One\n\ntype binary = Number of digit * binary | End\n\ntype nat = Z | Succ of nat\n\nexception Invalid_operation\n\n\nlet rec bin_of_int n =  if n = 0 \n  then Number (Zero,End)\n  else \n  if n = 1 \n  then Number (One, End)\n  else \n  if  n mod 2 = 0 \n  then Number (Zero, bin_of_int (n/2))\n  else \n    Number (One, bin_of_int (n/2))\n                        \n                        \nlet rec toList n = match n with \n  | Number (x,tl) -> x :: (toList tl)\n  | End -> []\n\nlet rec toBin xs = match xs with \n  | [] -> End\n  | x :: xs -> Number (x,toBin xs)\n\n\nlet t = toBin [Zero;Zero;One];;\n\n\nlet rec inc num = match num with \n  | Number (Zero,tl) -> Number (One,tl)\n  | Number (One,tl) -> Number (Zero, inc tl)\n  | End -> Number (One,End) \n\n\nexception Cannot_borrow\n\nlet borrow num =    \n\n  let rec helper num = \n    match num with \n    | Number (Zero,tl) -> Number (One,helper tl) \n    | Number (One,tl) -> Number (Zero, tl)\n    | End -> raise Cannot_borrow\n  in (helper num)\n\n\n\nlet dec num = match num with  \n  | Number (One, tl) -> Number (Zero,tl)\n  | Number (Zero, tl) -> Number (One, borrow tl) \n  | End -> End\n\n\nlet rec int_of_bin n = match n with\n  | Number (Zero,xs) -> 2 * (int_of_bin xs)\n  | Number (One,xs) -> 2 * (int_of_bin xs) + 1\n  | End -> 0\n\n(* output is (base * carry) *)\nlet add_digit : digit -> digit -> digit * digit  = \n  (fun x y -> match (x,y) with \n     | (Zero,_) ->  (y,Zero)\n     | (_,Zero) ->   (x,Zero)\n     | (One,One) -> (Zero,One) )\n\nlet rec add x y = match (x,y) with\n  | (End,_) -> y\n  | (_,End) -> x \n  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in\n      let rest = add xs ys in\n      match carry with \n      | Zero -> Number (base,rest)\n      | One -> Number (base, inc rest)\n\n\ntype comparison = EQ | GT | LT \n\nlet compare_digit x y = match (x,y) with\n  | (Zero,One) -> LT \n  | (One,Zero) -> GT \n  | _ -> EQ\n\nlet rec compare : binary -> binary -> comparison = \n  (fun x y -> match (x,y) with \n     | (End,End) -> EQ\n     | (_,End) -> GT \n     | (End,_) -> LT\n     |Number (x, xs), Number (y, ys) ->   \n         match (compare xs ys) with \n         | EQ -> compare_digit x y  \n         | LT -> LT \n         | GT -> GT    \n                                                    \n  )\n\n\n\nlet shift_left x = Number (Zero,x)\n\n\n(* Partial function *)\nlet shift_right n = match n with \n  | Number (x,End) -> n\n  | Number (x,xs) -> xs\n\n\nlet rec rshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (rshift x) in \n         (fun x -> shift_right (f x)) \n  )\n\n\nlet rec lshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (lshift x) in \n         (fun x -> shift_left (f x)) \n  )\n\n(* Russian multiplication *)\n(* Cannot derive a bound :( *)\nlet rec russ_mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number(Zero,rest) -> russ_mult rest (shift_left y) \n  | Number (One,rest) -> russ_mult rest (add y (shift_left y))\n\n(* Long multiplication *)\n(* Cannot derive a bound :( *)\nlet rec mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number (One,rest) -> add y (mult rest (shift_left y))\n  | Number (Zero,rest) -> mult rest (shift_left y)  \n\n\n\n\n(* To help automate testing\n\n\nlet tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))\n\n\n\n\n\n\nlet genPairs n = \nlet half = n / 2 in\nlet rec helper k = \nif k > half \nthen []\nelse \n(k,n-k) :: (helper (k+1))\nin \nhelper 0\n\nlet rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) \n\n*)(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype digit = Zero |  One\n\ntype binary = Number of digit * binary | End\n\ntype nat = Z | Succ of nat\n\nexception Invalid_operation\n\n\nlet rec bin_of_int n =  if n = 0 \n  then Number (Zero,End)\n  else \n  if n = 1 \n  then Number (One, End)\n  else \n  if  n mod 2 = 0 \n  then Number (Zero, bin_of_int (n/2))\n  else \n    Number (One, bin_of_int (n/2))\n                        \n                        \nlet rec toList n = match n with \n  | Number (x,tl) -> x :: (toList tl)\n  | End -> []\n\nlet rec toBin xs = match xs with \n  | [] -> End\n  | x :: xs -> Number (x,toBin xs)\n\n\nlet t = toBin [Zero;Zero;One];;\n\n\nlet rec inc num = match num with \n  | Number (Zero,tl) -> Number (One,tl)\n  | Number (One,tl) -> Number (Zero, inc tl)\n  | End -> Number (One,End) \n\n\nexception Cannot_borrow\n\nlet borrow num =    \n\n  let rec helper num = \n    match num with \n    | Number (Zero,tl) -> Number (One,helper tl) \n    | Number (One,tl) -> Number (Zero, tl)\n    | End -> raise Cannot_borrow\n  in (helper num)\n\n\n\nlet dec num = match num with  \n  | Number (One, tl) -> Number (Zero,tl)\n  | Number (Zero, tl) -> Number (One, borrow tl) \n  | End -> End\n\n\nlet rec int_of_bin n = match n with\n  | Number (Zero,xs) -> 2 * (int_of_bin xs)\n  | Number (One,xs) -> 2 * (int_of_bin xs) + 1\n  | End -> 0\n\n(* output is (base * carry) *)\nlet add_digit : digit -> digit -> digit * digit  = \n  (fun x y -> match (x,y) with \n     | (Zero,_) ->  (y,Zero)\n     | (_,Zero) ->   (x,Zero)\n     | (One,One) -> (Zero,One) )\n\nlet rec add x y = match (x,y) with\n  | (End,_) -> y\n  | (_,End) -> x \n  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in\n      let rest = add xs ys in\n      match carry with \n      | Zero -> Number (base,rest)\n      | One -> Number (base, inc rest)\n\n\ntype comparison = EQ | GT | LT \n\nlet compare_digit x y = match (x,y) with\n  | (Zero,One) -> LT \n  | (One,Zero) -> GT \n  | _ -> EQ\n\nlet rec compare : binary -> binary -> comparison = \n  (fun x y -> match (x,y) with \n     | (End,End) -> EQ\n     | (_,End) -> GT \n     | (End,_) -> LT\n     |Number (x, xs), Number (y, ys) ->   \n         match (compare xs ys) with \n         | EQ -> compare_digit x y  \n         | LT -> LT \n         | GT -> GT    \n                                                    \n  )\n\n\n\nlet shift_left x = Number (Zero,x)\n\n\n(* Partial function *)\nlet shift_right n = match n with \n  | Number (x,End) -> n\n  | Number (x,xs) -> xs\n\n\nlet rec rshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (rshift x) in \n         (fun x -> shift_right (f x)) \n  )\n\n\nlet rec lshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (lshift x) in \n         (fun x -> shift_left (f x)) \n  )\n\n(* Russian multiplication *)\n(* Cannot derive a bound :( *)\nlet rec russ_mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number(Zero,rest) -> russ_mult rest (shift_left y) \n  | Number (One,rest) -> russ_mult rest (add y (shift_left y))\n\n(* Long multiplication *)\n(* Cannot derive a bound :( *)\nlet rec mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number (One,rest) -> add y (mult rest (shift_left y))\n  | Number (Zero,rest) -> mult rest (shift_left y)  \n\n\n\n\n(* To help automate testing\n\n\nlet tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))\n\n\n\n\n\n\nlet genPairs n = \nlet half = n / 2 in\nlet rec helper k = \nif k > half \nthen []\nelse \n(k,n-k) :: (helper (k+1))\nin \nhelper 0\n\nlet rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) \n\n*)\n\nYou ran the grader 10 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+
+    
+type digit = Zero |  One
+
+type binary = Number of digit * binary | End
+
+type nat = Z | Succ of nat
+
+exception Invalid_operation
+
+
+let rec bin_of_int n =  if n = 0 
+  then Number (Zero,End)
+  else 
+  if n = 1 
+  then Number (One, End)
+  else 
+  if  n mod 2 = 0 
+  then Number (Zero, bin_of_int (n/2))
+  else 
+    Number (One, bin_of_int (n/2))
+                        
+                        
+let rec toList n = match n with 
+  | Number (x,tl) -> x :: (toList tl)
+  | End -> []
+
+let rec toBin xs = match xs with 
+  | [] -> End
+  | x :: xs -> Number (x,toBin xs)
+
+
+let t = toBin [Zero;Zero;One];;
+
+
+let rec inc num = match num with 
+  | Number (Zero,tl) -> Number (One,tl)
+  | Number (One,tl) -> Number (Zero, inc tl)
+  | End -> Number (One,End) 
+
+
+exception Cannot_borrow
+
+let borrow num =    
+
+  let rec helper num = 
+    match num with 
+    | Number (Zero,tl) -> Number (One,helper tl) 
+    | Number (One,tl) -> Number (Zero, tl)
+    | End -> raise Cannot_borrow
+  in (helper num)
+
+
+
+let dec num = match num with  
+  | Number (One, tl) -> Number (Zero,tl)
+  | Number (Zero, tl) -> Number (One, borrow tl) 
+  | End -> End
+
+
+let rec int_of_bin n = match n with
+  | Number (Zero,xs) -> 2 * (int_of_bin xs)
+  | Number (One,xs) -> 2 * (int_of_bin xs) + 1
+  | End -> 0
+
+(* output is (base * carry) *)
+let add_digit : digit -> digit -> digit * digit  = 
+  (fun x y -> match (x,y) with 
+     | (Zero,_) ->  (y,Zero)
+     | (_,Zero) ->   (x,Zero)
+     | (One,One) -> (Zero,One) )
+
+let rec add x y = match (x,y) with
+  | (End,_) -> y
+  | (_,End) -> x 
+  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in
+      let rest = add xs ys in
+      match carry with 
+      | Zero -> Number (base,rest)
+      | One -> Number (base, inc rest)
+
+
+type comparison = EQ | GT | LT 
+
+let compare_digit x y = match (x,y) with
+  | (Zero,One) -> LT 
+  | (One,Zero) -> GT 
+  | _ -> EQ
+
+let rec compare : binary -> binary -> comparison = 
+  (fun x y -> match (x,y) with 
+     | (End,End) -> EQ
+     | (_,End) -> GT 
+     | (End,_) -> LT
+     |Number (x, xs), Number (y, ys) ->   
+         match (compare xs ys) with 
+         | EQ -> compare_digit x y  
+         | LT -> LT 
+         | GT -> GT    
+                                                    
+  )
+
+
+
+let shift_left x = Number (Zero,x)
+
+
+(* Partial function *)
+let shift_right n = match n with 
+  | Number (x,End) -> n
+  | Number (x,xs) -> xs
+
+
+let rec rshift : nat -> (binary -> binary) = 
+  (fun n -> match n with 
+     | Z -> (fun x -> x)
+     | (Succ x) -> let f = (rshift x) in 
+         (fun x -> shift_right (f x)) 
+  )
+
+
+let rec lshift : nat -> (binary -> binary) = 
+  (fun n -> match n with 
+     | Z -> (fun x -> x)
+     | (Succ x) -> let f = (lshift x) in 
+         (fun x -> shift_left (f x)) 
+  )
+
+(* Russian multiplication *)
+(* Cannot derive a bound :( *)
+let rec russ_mult x y = match x with 
+  | Number (Zero,End) -> x
+  | Number (One,End) -> y
+  | Number(Zero,rest) -> russ_mult rest (shift_left y) 
+  | Number (One,rest) -> russ_mult rest (add y (shift_left y))
+
+(* Long multiplication *)
+(* Cannot derive a bound :( *)
+let rec mult x y = match x with 
+  | Number (Zero,End) -> x
+  | Number (One,End) -> y
+  | Number (One,rest) -> add y (mult rest (shift_left y))
+  | Number (Zero,rest) -> mult rest (shift_left y)  
+
+
+
+
+(* To help automate testing
+
+
+let tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))
+
+
+
+
+
+
+let genPairs n = 
+let half = n / 2 in
+let rec helper k = 
+if k > half 
+then []
+else 
+(k,n-k) :: (helper (k+1))
+in 
+helper 0
+
+let rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) 
+
+*)">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype digit = Zero |  One\n\ntype binary = Number of digit * binary | End\n\ntype nat = Z | Succ of nat\n\nexception Invalid_operation\n\n\nlet rec bin_of_int n =  if n = 0 \n  then Number (Zero,End)\n  else \n  if n = 1 \n  then Number (One, End)\n  else \n  if  n mod 2 = 0 \n  then Number (Zero, bin_of_int (n/2))\n  else \n    Number (One, bin_of_int (n/2))\n                        \n                        \nlet rec toList n = match n with \n  | Number (x,tl) -> x :: (toList tl)\n  | End -> []\n\nlet rec toBin xs = match xs with \n  | [] -> End\n  | x :: xs -> Number (x,toBin xs)\n\n\nlet t = toBin [Zero;Zero;One];;\n\n\nlet rec inc num = match num with \n  | Number (Zero,tl) -> Number (One,tl)\n  | Number (One,tl) -> Number (Zero, inc tl)\n  | End -> Number (One,End) \n\n\nexception Cannot_borrow\n\nlet borrow num =    \n\n  let rec helper num = \n    match num with \n    | Number (Zero,tl) -> Number (One,helper tl) \n    | Number (One,tl) -> Number (Zero, tl)\n    | End -> raise Cannot_borrow\n  in (helper num)\n\n\n\nlet dec num = match num with  \n  | Number (One, tl) -> Number (Zero,tl)\n  | Number (Zero, tl) -> Number (One, borrow tl) \n  | End -> End\n\n\nlet rec int_of_bin n = match n with\n  | Number (Zero,xs) -> 2 * (int_of_bin xs)\n  | Number (One,xs) -> 2 * (int_of_bin xs) + 1\n  | End -> 0\n\n(* output is (base * carry) *)\nlet add_digit : digit -> digit -> digit * digit  = \n  (fun x y -> match (x,y) with \n     | (Zero,_) ->  (y,Zero)\n     | (_,Zero) ->   (x,Zero)\n     | (One,One) -> (Zero,One) )\n\nlet rec add x y = match (x,y) with\n  | (End,_) -> y\n  | (_,End) -> x \n  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in\n      let rest = add xs ys in\n      match carry with \n      | Zero -> Number (base,rest)\n      | One -> Number (base, inc rest)\n\n\ntype comparison = EQ | GT | LT \n\nlet compare_digit x y = match (x,y) with\n  | (Zero,One) -> LT \n  | (One,Zero) -> GT \n  | _ -> EQ\n\nlet rec compare : binary -> binary -> comparison = \n  (fun x y -> match (x,y) with \n     | (End,End) -> EQ\n     | (_,End) -> GT \n     | (End,_) -> LT\n     |Number (x, xs), Number (y, ys) ->   \n         match (compare xs ys) with \n         | EQ -> compare_digit x y  \n         | LT -> LT \n         | GT -> GT    \n                                                    \n  )\n\n\n\nlet shift_left x = Number (Zero,x)\n\n\n(* Partial function *)\nlet shift_right n = match n with \n  | Number (x,End) -> n\n  | Number (x,xs) -> xs\n\n\nlet rec rshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (rshift x) in \n         (fun x -> shift_right (f x)) \n  )\n\n\nlet rec lshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (lshift x) in \n         (fun x -> shift_left (f x)) \n  )\n\n(* Russian multiplication *)\n(* Cannot derive a bound :( *)\nlet rec russ_mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number(Zero,rest) -> russ_mult rest (shift_left y) \n  | Number (One,rest) -> russ_mult rest (add y (shift_left y))\n\n(* Long multiplication *)\n(* Cannot derive a bound :( *)\nlet rec mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number (One,rest) -> add y (mult rest (shift_left y))\n  | Number (Zero,rest) -> mult rest (shift_left y)  \n\n\n\n\n(* To help automate testing\n\n\nlet tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))\n\n\n\n\n\n\nlet genPairs n = \nlet half = n / 2 in\nlet rec helper k = \nif k > half \nthen []\nelse \n(k,n-k) :: (helper (k+1))\nin \nhelper 0\n\nlet rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) \n\n*)(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype digit = Zero |  One\n\ntype binary = Number of digit * binary | End\n\ntype nat = Z | Succ of nat\n\nexception Invalid_operation\n\n\nlet rec bin_of_int n =  if n = 0 \n  then Number (Zero,End)\n  else \n  if n = 1 \n  then Number (One, End)\n  else \n  if  n mod 2 = 0 \n  then Number (Zero, bin_of_int (n/2))\n  else \n    Number (One, bin_of_int (n/2))\n                        \n                        \nlet rec toList n = match n with \n  | Number (x,tl) -> x :: (toList tl)\n  | End -> []\n\nlet rec toBin xs = match xs with \n  | [] -> End\n  | x :: xs -> Number (x,toBin xs)\n\n\nlet t = toBin [Zero;Zero;One];;\n\n\nlet rec inc num = match num with \n  | Number (Zero,tl) -> Number (One,tl)\n  | Number (One,tl) -> Number (Zero, inc tl)\n  | End -> Number (One,End) \n\n\nexception Cannot_borrow\n\nlet borrow num =    \n\n  let rec helper num = \n    match num with \n    | Number (Zero,tl) -> Number (One,helper tl) \n    | Number (One,tl) -> Number (Zero, tl)\n    | End -> raise Cannot_borrow\n  in (helper num)\n\n\n\nlet dec num = match num with  \n  | Number (One, tl) -> Number (Zero,tl)\n  | Number (Zero, tl) -> Number (One, borrow tl) \n  | End -> End\n\n\nlet rec int_of_bin n = match n with\n  | Number (Zero,xs) -> 2 * (int_of_bin xs)\n  | Number (One,xs) -> 2 * (int_of_bin xs) + 1\n  | End -> 0\n\n(* output is (base * carry) *)\nlet add_digit : digit -> digit -> digit * digit  = \n  (fun x y -> match (x,y) with \n     | (Zero,_) ->  (y,Zero)\n     | (_,Zero) ->   (x,Zero)\n     | (One,One) -> (Zero,One) )\n\nlet rec add x y = match (x,y) with\n  | (End,_) -> y\n  | (_,End) -> x \n  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in\n      let rest = add xs ys in\n      match carry with \n      | Zero -> Number (base,rest)\n      | One -> Number (base, inc rest)\n\n\ntype comparison = EQ | GT | LT \n\nlet compare_digit x y = match (x,y) with\n  | (Zero,One) -> LT \n  | (One,Zero) -> GT \n  | _ -> EQ\n\nlet rec compare : binary -> binary -> comparison = \n  (fun x y -> match (x,y) with \n     | (End,End) -> EQ\n     | (_,End) -> GT \n     | (End,_) -> LT\n     |Number (x, xs), Number (y, ys) ->   \n         match (compare xs ys) with \n         | EQ -> compare_digit x y  \n         | LT -> LT \n         | GT -> GT    \n                                                    \n  )\n\n\n\nlet shift_left x = Number (Zero,x)\n\n\n(* Partial function *)\nlet shift_right n = match n with \n  | Number (x,End) -> n\n  | Number (x,xs) -> xs\n\n\nlet rec rshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (rshift x) in \n         (fun x -> shift_right (f x)) \n  )\n\n\nlet rec lshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (lshift x) in \n         (fun x -> shift_left (f x)) \n  )\n\n(* Russian multiplication *)\n(* Cannot derive a bound :( *)\nlet rec russ_mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number(Zero,rest) -> russ_mult rest (shift_left y) \n  | Number (One,rest) -> russ_mult rest (add y (shift_left y))\n\n(* Long multiplication *)\n(* Cannot derive a bound :( *)\nlet rec mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number (One,rest) -> add y (mult rest (shift_left y))\n  | Number (Zero,rest) -> mult rest (shift_left y)  \n\n\n\n\n(* To help automate testing\n\n\nlet tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))\n\n\n\n\n\n\nlet genPairs n = \nlet half = n / 2 in\nlet rec helper k = \nif k > half \nthen []\nelse \n(k,n-k) :: (helper (k+1))\nin \nhelper 0\n\nlet rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) \n\n*)\n\nYou ran the grader 11 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+
+    
+type digit = Zero |  One
+
+type binary = Number of digit * binary | End
+
+type nat = Z | Succ of nat
+
+exception Invalid_operation
+
+
+let rec bin_of_int n =  if n = 0 
+  then Number (Zero,End)
+  else 
+  if n = 1 
+  then Number (One, End)
+  else 
+  if  n mod 2 = 0 
+  then Number (Zero, bin_of_int (n/2))
+  else 
+    Number (One, bin_of_int (n/2))
+                        
+                        
+let rec toList n = match n with 
+  | Number (x,tl) -> x :: (toList tl)
+  | End -> []
+
+let rec toBin xs = match xs with 
+  | [] -> End
+  | x :: xs -> Number (x,toBin xs)
+
+
+let t = toBin [Zero;Zero;One];;
+
+
+let rec inc num = match num with 
+  | Number (Zero,tl) -> Number (One,tl)
+  | Number (One,tl) -> Number (Zero, inc tl)
+  | End -> Number (One,End) 
+
+
+exception Cannot_borrow
+
+let borrow num =    
+
+  let rec helper num = 
+    match num with 
+    | Number (Zero,tl) -> Number (One,helper tl) 
+    | Number (One,tl) -> Number (Zero, tl)
+    | End -> raise Cannot_borrow
+  in (helper num)
+
+
+
+let dec num = match num with  
+  | Number (One, tl) -> Number (Zero,tl)
+  | Number (Zero, tl) -> Number (One, borrow tl) 
+  | End -> End
+
+
+let rec int_of_bin n = match n with
+  | Number (Zero,xs) -> 2 * (int_of_bin xs)
+  | Number (One,xs) -> 2 * (int_of_bin xs) + 1
+  | End -> 0
+
+(* output is (base * carry) *)
+let add_digit : digit -> digit -> digit * digit  = 
+  (fun x y -> match (x,y) with 
+     | (Zero,_) ->  (y,Zero)
+     | (_,Zero) ->   (x,Zero)
+     | (One,One) -> (Zero,One) )
+
+let rec add x y = match (x,y) with
+  | (End,_) -> y
+  | (_,End) -> x 
+  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in
+      let rest = add xs ys in
+      match carry with 
+      | Zero -> Number (base,rest)
+      | One -> Number (base, inc rest)
+
+
+type comparison = EQ | GT | LT 
+
+let compare_digit x y = match (x,y) with
+  | (Zero,One) -> LT 
+  | (One,Zero) -> GT 
+  | _ -> EQ
+
+let rec compare : binary -> binary -> comparison = 
+  (fun x y -> match (x,y) with 
+     | (End,End) -> EQ
+     | (_,End) -> GT 
+     | (End,_) -> LT
+     |Number (x, xs), Number (y, ys) ->   
+         match (compare xs ys) with 
+         | EQ -> compare_digit x y  
+         | LT -> LT 
+         | GT -> GT    
+                                                    
+  )
+
+
+
+let shift_left x = Number (Zero,x)
+
+
+(* Partial function *)
+let shift_right n = match n with 
+  | Number (x,End) -> n
+  | Number (x,xs) -> xs
+
+
+let rec rshift : nat -> (binary -> binary) = 
+  (fun n -> match n with 
+     | Z -> (fun x -> x)
+     | (Succ x) -> let f = (rshift x) in 
+         (fun x -> shift_right (f x)) 
+  )
+
+
+let rec lshift : nat -> (binary -> binary) = 
+  (fun n -> match n with 
+     | Z -> (fun x -> x)
+     | (Succ x) -> let f = (lshift x) in 
+         (fun x -> shift_left (f x)) 
+  )
+
+(* Russian multiplication *)
+(* Cannot derive a bound :( *)
+let rec russ_mult x y = match x with 
+  | Number (Zero,End) -> x
+  | Number (One,End) -> y
+  | Number(Zero,rest) -> russ_mult rest (shift_left y) 
+  | Number (One,rest) -> russ_mult rest (add y (shift_left y))
+
+(* Long multiplication *)
+(* Cannot derive a bound :( *)
+let rec mult x y = match x with 
+  | Number (Zero,End) -> x
+  | Number (One,End) -> y
+  | Number (One,rest) -> add y (mult rest (shift_left y))
+  | Number (Zero,rest) -> mult rest (shift_left y)  
+
+
+
+
+(* To help automate testing
+
+
+let tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))
+
+
+
+
+
+
+let genPairs n = 
+let half = n / 2 in
+let rec helper k = 
+if k > half 
+then []
+else 
+(k,n-k) :: (helper (k+1))
+in 
+helper 0
+
+let rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) 
+
+*)">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype digit = Zero |  One\n\ntype binary = Number of digit * binary | End\n\ntype nat = Z | Succ of nat\n\nexception Invalid_operation\n\n\nlet rec bin_of_int n =  if n = 0 \n  then Number (Zero,End)\n  else \n  if n = 1 \n  then Number (One, End)\n  else \n  if  n mod 2 = 0 \n  then Number (Zero, bin_of_int (n/2))\n  else \n    Number (One, bin_of_int (n/2))\n                        \n                        \nlet rec toList n = match n with \n  | Number (x,tl) -> x :: (toList tl)\n  | End -> []\n\nlet rec toBin xs = match xs with \n  | [] -> End\n  | x :: xs -> Number (x,toBin xs)\n\n\nlet t = toBin [Zero;Zero;One];;\n\n\nlet rec inc num = match num with \n  | Number (Zero,tl) -> Number (One,tl)\n  | Number (One,tl) -> Number (Zero, inc tl)\n  | End -> Number (One,End) \n\n\nexception Cannot_borrow\n\nlet borrow num =    \n\n  let rec helper num = \n    match num with \n    | Number (Zero,tl) -> Number (One,helper tl) \n    | Number (One,tl) -> Number (Zero, tl)\n    | End -> raise Cannot_borrow\n  in (helper num)\n\n\n\nlet dec num = match num with  \n  | Number (One, tl) -> Number (Zero,tl)\n  | Number (Zero, tl) -> Number (One, borrow tl) \n  | End -> End\n\n\nlet rec int_of_bin n = match n with\n  | Number (Zero,xs) -> 2 * (int_of_bin xs)\n  | Number (One,xs) -> 2 * (int_of_bin xs) + 1\n  | End -> 0\n\n(* output is (base * carry) *)\nlet add_digit : digit -> digit -> digit * digit  = \n  (fun x y -> match (x,y) with \n     | (Zero,_) ->  (y,Zero)\n     | (_,Zero) ->   (x,Zero)\n     | (One,One) -> (Zero,One) )\n\nlet rec add x y = match (x,y) with\n  | (End,_) -> y\n  | (_,End) -> x \n  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in\n      let rest = add xs ys in\n      match carry with \n      | Zero -> Number (base,rest)\n      | One -> Number (base, inc rest)\n\n\ntype comparison = EQ | GT | LT \n\nlet compare_digit x y = match (x,y) with\n  | (Zero,One) -> LT \n  | (One,Zero) -> GT \n  | _ -> EQ\n\nlet rec compare : binary -> binary -> comparison = \n  (fun x y -> match (x,y) with \n     | (End,End) -> EQ\n     | (_,End) -> GT \n     | (End,_) -> LT\n     |Number (x, xs), Number (y, ys) ->   \n         match (compare xs ys) with \n         | EQ -> compare_digit x y  \n         | LT -> LT \n         | GT -> GT    \n                                                    \n  )\n\n\n\nlet shift_left x = Number (Zero,x)\n\n\n(* Partial function *)\nlet shift_right n = match n with \n  | Number (x,End) -> n\n  | Number (x,xs) -> xs\n\n\nlet rec rshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (rshift x) in \n         (fun x -> shift_right (f x)) \n  )\n\n\nlet rec lshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (lshift x) in \n         (fun x -> shift_left (f x)) \n  )\n\n(* Russian multiplication *)\n(* Cannot derive a bound :( *)\nlet rec russ_mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number(Zero,rest) -> russ_mult rest (shift_left y) \n  | Number (One,rest) -> russ_mult rest (add y (shift_left y))\n\n(* Long multiplication *)\n(* Cannot derive a bound :( *)\nlet rec mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number (One,rest) -> add y (mult rest (shift_left y))\n  | Number (Zero,rest) -> mult rest (shift_left y)  \n\n\n\n\n(* To help automate testing\n\n\nlet tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))\n\n\n\n\n\n\nlet genPairs n = \nlet half = n / 2 in\nlet rec helper k = \nif k > half \nthen []\nelse \n(k,n-k) :: (helper (k+1))\nin \nhelper 0\n\nlet rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) \n\n*)(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype digit = Zero |  One\n\ntype binary = Number of digit * binary | End\n\ntype nat = Z | Succ of nat\n\nexception Invalid_operation\n\n\nlet rec bin_of_int n =  if n = 0 \n  then Number (Zero,End)\n  else \n  if n = 1 \n  then Number (One, End)\n  else \n  if  n mod 2 = 0 \n  then Number (Zero, bin_of_int (n/2))\n  else \n    Number (One, bin_of_int (n/2))\n                        \n                        \nlet rec toList n = match n with \n  | Number (x,tl) -> x :: (toList tl)\n  | End -> []\n\nlet rec toBin xs = match xs with \n  | [] -> End\n  | x :: xs -> Number (x,toBin xs)\n\n\nlet t = toBin [Zero;Zero;One];;\n\n\nlet rec inc num = match num with \n  | Number (Zero,tl) -> Number (One,tl)\n  | Number (One,tl) -> Number (Zero, inc tl)\n  | End -> Number (One,End) \n\n\nexception Cannot_borrow\n\nlet borrow num =    \n\n  let rec helper num = \n    match num with \n    | Number (Zero,tl) -> Number (One,helper tl) \n    | Number (One,tl) -> Number (Zero, tl)\n    | End -> raise Cannot_borrow\n  in (helper num)\n\n\n\nlet dec num = match num with  \n  | Number (One, tl) -> Number (Zero,tl)\n  | Number (Zero, tl) -> Number (One, borrow tl) \n  | End -> End\n\n\nlet rec int_of_bin n = match n with\n  | Number (Zero,xs) -> 2 * (int_of_bin xs)\n  | Number (One,xs) -> 2 * (int_of_bin xs) + 1\n  | End -> 0\n\n(* output is (base * carry) *)\nlet add_digit : digit -> digit -> digit * digit  = \n  (fun x y -> match (x,y) with \n     | (Zero,_) ->  (y,Zero)\n     | (_,Zero) ->   (x,Zero)\n     | (One,One) -> (Zero,One) )\n\nlet rec add x y = match (x,y) with\n  | (End,_) -> y\n  | (_,End) -> x \n  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in\n      let rest = add xs ys in\n      match carry with \n      | Zero -> Number (base,rest)\n      | One -> Number (base, inc rest)\n\n\ntype comparison = EQ | GT | LT \n\nlet compare_digit x y = match (x,y) with\n  | (Zero,One) -> LT \n  | (One,Zero) -> GT \n  | _ -> EQ\n\nlet rec compare : binary -> binary -> comparison = \n  (fun x y -> match (x,y) with \n     | (End,End) -> EQ\n     | (_,End) -> GT \n     | (End,_) -> LT\n     |Number (x, xs), Number (y, ys) ->   \n         match (compare xs ys) with \n         | EQ -> compare_digit x y  \n         | LT -> LT \n         | GT -> GT    \n                                                    \n  )\n\n\n\nlet shift_left x = Number (Zero,x)\n\n\n(* Partial function *)\nlet shift_right n = match n with \n  | Number (x,End) -> n\n  | Number (x,xs) -> xs\n\n\nlet rec rshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (rshift x) in \n         (fun x -> shift_right (f x)) \n  )\n\n\nlet rec lshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (lshift x) in \n         (fun x -> shift_left (f x)) \n  )\n\n(* Russian multiplication *)\n(* Cannot derive a bound :( *)\nlet rec russ_mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number(Zero,rest) -> russ_mult rest (shift_left y) \n  | Number (One,rest) -> russ_mult rest (add y (shift_left y))\n\n(* Long multiplication *)\n(* Cannot derive a bound :( *)\nlet rec mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number (One,rest) -> add y (mult rest (shift_left y))\n  | Number (Zero,rest) -> mult rest (shift_left y)  \n\n\n\n\n(* To help automate testing\n\n\nlet tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))\n\n\n\n\n\n\nlet genPairs n = \nlet half = n / 2 in\nlet rec helper k = \nif k > half \nthen []\nelse \n(k,n-k) :: (helper (k+1))\nin \nhelper 0\n\nlet rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) \n\n*)\n\nYou ran the grader 12 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+
+    
+type digit = Zero |  One
+
+type binary = Number of digit * binary | End
+
+type nat = Z | Succ of nat
+
+exception Invalid_operation
+
+
+let rec bin_of_int n =  if n = 0 
+  then Number (Zero,End)
+  else 
+  if n = 1 
+  then Number (One, End)
+  else 
+  if  n mod 2 = 0 
+  then Number (Zero, bin_of_int (n/2))
+  else 
+    Number (One, bin_of_int (n/2))
+                        
+                        
+let rec toList n = match n with 
+  | Number (x,tl) -> x :: (toList tl)
+  | End -> []
+
+let rec toBin xs = match xs with 
+  | [] -> End
+  | x :: xs -> Number (x,toBin xs)
+
+
+let t = toBin [Zero;Zero;One];;
+
+
+let rec inc num = match num with 
+  | Number (Zero,tl) -> Number (One,tl)
+  | Number (One,tl) -> Number (Zero, inc tl)
+  | End -> Number (One,End) 
+
+
+exception Cannot_borrow
+
+let borrow num =    
+
+  let rec helper num = 
+    match num with 
+    | Number (Zero,tl) -> Number (One,helper tl) 
+    | Number (One,tl) -> Number (Zero, tl)
+    | End -> raise Cannot_borrow
+  in (helper num)
+
+
+
+let dec num = match num with  
+  | Number (One, tl) -> Number (Zero,tl)
+  | Number (Zero, tl) -> Number (One, borrow tl) 
+  | End -> End
+
+
+let rec int_of_bin n = match n with
+  | Number (Zero,xs) -> 2 * (int_of_bin xs)
+  | Number (One,xs) -> 2 * (int_of_bin xs) + 1
+  | End -> 0
+
+(* output is (base * carry) *)
+let add_digit : digit -> digit -> digit * digit  = 
+  (fun x y -> match (x,y) with 
+     | (Zero,_) ->  (y,Zero)
+     | (_,Zero) ->   (x,Zero)
+     | (One,One) -> (Zero,One) )
+
+let rec add x y = match (x,y) with
+  | (End,_) -> y
+  | (_,End) -> x 
+  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in
+      let rest = add xs ys in
+      match carry with 
+      | Zero -> Number (base,rest)
+      | One -> Number (base, inc rest)
+
+
+type comparison = EQ | GT | LT 
+
+let compare_digit x y = match (x,y) with
+  | (Zero,One) -> LT 
+  | (One,Zero) -> GT 
+  | _ -> EQ
+
+let rec compare : binary -> binary -> comparison = 
+  (fun x y -> match (x,y) with 
+     | (End,End) -> EQ
+     | (_,End) -> GT 
+     | (End,_) -> LT
+     |Number (x, xs), Number (y, ys) ->   
+         match (compare xs ys) with 
+         | EQ -> compare_digit x y  
+         | LT -> LT 
+         | GT -> GT    
+                                                    
+  )
+
+
+
+let shift_left x = Number (Zero,x)
+
+
+(* Partial function *)
+let shift_right n = match n with 
+  | Number (x,End) -> n
+  | Number (x,xs) -> xs
+
+
+let rec rshift : nat -> (binary -> binary) = 
+  (fun n -> match n with 
+     | Z -> (fun x -> x)
+     | (Succ x) -> let f = (rshift x) in 
+         (fun x -> shift_right (f x)) 
+  )
+
+
+let rec lshift : nat -> (binary -> binary) = 
+  (fun n -> match n with 
+     | Z -> (fun x -> x)
+     | (Succ x) -> let f = (lshift x) in 
+         (fun x -> shift_left (f x)) 
+  )
+
+(* Russian multiplication *)
+(* Cannot derive a bound :( *)
+let rec russ_mult x y = match x with 
+  | Number (Zero,End) -> x
+  | Number (One,End) -> y
+  | Number(Zero,rest) -> russ_mult rest (shift_left y) 
+  | Number (One,rest) -> russ_mult rest (add y (shift_left y))
+
+(* Long multiplication *)
+(* Cannot derive a bound :( *)
+let rec mult x y = match x with 
+  | Number (Zero,End) -> x
+  | Number (One,End) -> y
+  | Number (One,rest) -> add y (mult rest (shift_left y))
+  | Number (Zero,rest) -> mult rest (shift_left y)  
+
+
+
+
+(* To help automate testing
+
+
+let tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))
+
+
+
+
+
+
+let genPairs n = 
+let half = n / 2 in
+let rec helper k = 
+if k > half 
+then []
+else 
+(k,n-k) :: (helper (k+1))
+in 
+helper 0
+
+let rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) 
+
+*)">
+
+Converted to sexp :)
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+
+    
+type digit = Zero |  One
+
+type binary = Number of digit * binary | End
+
+type nat = Z | Succ of nat
+
+exception Invalid_operation
+
+
+let rec bin_of_int n =  if n = 0 
+  then Number (Zero,End)
+  else 
+  if n = 1 
+  then Number (One, End)
+  else 
+  if  n mod 2 = 0 
+  then Number (Zero, bin_of_int (n/2))
+  else 
+    Number (One, bin_of_int (n/2))
+                        
+                        
+let rec toList n = match n with 
+  | Number (x,tl) -> x :: (toList tl)
+  | End -> []
+
+let rec toBin xs = match xs with 
+  | [] -> End
+  | x :: xs -> Number (x,toBin xs)
+
+
+let t = toBin [Zero;Zero;One];;
+
+
+let rec inc num = match num with 
+  | Number (Zero,tl) -> Number (One,tl)
+  | Number (One,tl) -> Number (Zero, inc tl)
+  | End -> Number (One,End) 
+
+
+exception Cannot_borrow
+
+let borrow num =    
+
+  let rec helper num = 
+    match num with 
+    | Number (Zero,tl) -> Number (One,helper tl) 
+    | Number (One,tl) -> Number (Zero, tl)
+    | End -> raise Cannot_borrow
+  in (helper num)
+
+
+
+let dec num = match num with  
+  | Number (One, tl) -> Number (Zero,tl)
+  | Number (Zero, tl) -> Number (One, borrow tl) 
+  | End -> End
+
+
+let rec int_of_bin n = match n with
+  | Number (Zero,xs) -> 2 * (int_of_bin xs)
+  | Number (One,xs) -> 2 * (int_of_bin xs) + 1
+  | End -> 0
+
+(* output is (base * carry) *)
+let add_digit : digit -> digit -> digit * digit  = 
+  (fun x y -> match (x,y) with 
+     | (Zero,_) ->  (y,Zero)
+     | (_,Zero) ->   (x,Zero)
+     | (One,One) -> (Zero,One) )
+
+let rec add x y = match (x,y) with
+  | (End,_) -> y
+  | (_,End) -> x 
+  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in
+      let rest = add xs ys in
+      match carry with 
+      | Zero -> Number (base,rest)
+      | One -> Number (base, inc rest)
+
+
+type comparison = EQ | GT | LT 
+
+let compare_digit x y = match (x,y) with
+  | (Zero,One) -> LT 
+  | (One,Zero) -> GT 
+  | _ -> EQ
+
+let rec compare : binary -> binary -> comparison = 
+  (fun x y -> match (x,y) with 
+     | (End,End) -> EQ
+     | (_,End) -> GT 
+     | (End,_) -> LT
+     |Number (x, xs), Number (y, ys) ->   
+         match (compare xs ys) with 
+         | EQ -> compare_digit x y  
+         | LT -> LT 
+         | GT -> GT    
+                                                    
+  )
+
+
+
+let shift_left x = Number (Zero,x)
+
+
+(* Partial function *)
+let shift_right n = match n with 
+  | Number (x,End) -> n
+  | Number (x,xs) -> xs
+
+
+let rec rshift : nat -> (binary -> binary) = 
+  (fun n -> match n with 
+     | Z -> (fun x -> x)
+     | (Succ x) -> let f = (rshift x) in 
+         (fun x -> shift_right (f x)) 
+  )
+
+
+let rec lshift : nat -> (binary -> binary) = 
+  (fun n -> match n with 
+     | Z -> (fun x -> x)
+     | (Succ x) -> let f = (lshift x) in 
+         (fun x -> shift_left (f x)) 
+  )
+
+(* Russian multiplication *)
+(* Cannot derive a bound :( *)
+let rec russ_mult x y = match x with 
+  | Number (Zero,End) -> x
+  | Number (One,End) -> y
+  | Number(Zero,rest) -> russ_mult rest (shift_left y) 
+  | Number (One,rest) -> russ_mult rest (add y (shift_left y))
+
+(* Long multiplication *)
+(* Cannot derive a bound :( *)
+let rec mult x y = match x with 
+  | Number (Zero,End) -> x
+  | Number (One,End) -> y
+  | Number (One,rest) -> add y (mult rest (shift_left y))
+  | Number (Zero,rest) -> mult rest (shift_left y)  
+
+
+
+
+(* To help automate testing
+
+
+let tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))
+
+
+
+
+
+
+let genPairs n = 
+let half = n / 2 in
+let rec helper k = 
+if k > half 
+then []
+else 
+(k,n-k) :: (helper (k+1))
+in 
+helper 0
+
+let rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) 
+
+*)">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype digit = Zero |  One\n\ntype binary = Number of digit * binary | End\n\ntype nat = Z | Succ of nat\n\nexception Invalid_operation\n\n\nlet rec bin_of_int n =  if n = 0 \n  then Number (Zero,End)\n  else \n  if n = 1 \n  then Number (One, End)\n  else \n  if  n mod 2 = 0 \n  then Number (Zero, bin_of_int (n/2))\n  else \n    Number (One, bin_of_int (n/2))\n                        \n                        \nlet rec toList n = match n with \n  | Number (x,tl) -> x :: (toList tl)\n  | End -> []\n\nlet rec toBin xs = match xs with \n  | [] -> End\n  | x :: xs -> Number (x,toBin xs)\n\n\nlet t = toBin [Zero;Zero;One];;\n\n\nlet rec inc num = match num with \n  | Number (Zero,tl) -> Number (One,tl)\n  | Number (One,tl) -> Number (Zero, inc tl)\n  | End -> Number (One,End) \n\n\nexception Cannot_borrow\n\nlet borrow num =    \n\n  let rec helper num = \n    match num with \n    | Number (Zero,tl) -> Number (One,helper tl) \n    | Number (One,tl) -> Number (Zero, tl)\n    | End -> raise Cannot_borrow\n  in (helper num)\n\n\n\nlet dec num = match num with  \n  | Number (One, tl) -> Number (Zero,tl)\n  | Number (Zero, tl) -> Number (One, borrow tl) \n  | End -> End\n\n\nlet rec int_of_bin n = match n with\n  | Number (Zero,xs) -> 2 * (int_of_bin xs)\n  | Number (One,xs) -> 2 * (int_of_bin xs) + 1\n  | End -> 0\n\n(* output is (base * carry) *)\nlet add_digit : digit -> digit -> digit * digit  = \n  (fun x y -> match (x,y) with \n     | (Zero,_) ->  (y,Zero)\n     | (_,Zero) ->   (x,Zero)\n     | (One,One) -> (Zero,One) )\n\nlet rec add x y = match (x,y) with\n  | (End,_) -> y\n  | (_,End) -> x \n  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in\n      let rest = add xs ys in\n      match carry with \n      | Zero -> Number (base,rest)\n      | One -> Number (base, inc rest)\n\n\ntype comparison = EQ | GT | LT \n\nlet compare_digit x y = match (x,y) with\n  | (Zero,One) -> LT \n  | (One,Zero) -> GT \n  | _ -> EQ\n\nlet rec compare : binary -> binary -> comparison = \n  (fun x y -> match (x,y) with \n     | (End,End) -> EQ\n     | (_,End) -> GT \n     | (End,_) -> LT\n     |Number (x, xs), Number (y, ys) ->   \n         match (compare xs ys) with \n         | EQ -> compare_digit x y  \n         | LT -> LT \n         | GT -> GT    \n                                                    \n  )\n\n\n\nlet shift_left x = Number (Zero,x)\n\n\n(* Partial function *)\nlet shift_right n = match n with \n  | Number (x,End) -> n\n  | Number (x,xs) -> xs\n\n\nlet rec rshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (rshift x) in \n         (fun x -> shift_right (f x)) \n  )\n\n\nlet rec lshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (lshift x) in \n         (fun x -> shift_left (f x)) \n  )\n\n(* Russian multiplication *)\n(* Cannot derive a bound :( *)\nlet rec russ_mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number(Zero,rest) -> russ_mult rest (shift_left y) \n  | Number (One,rest) -> russ_mult rest (add y (shift_left y))\n\n(* Long multiplication *)\n(* Cannot derive a bound :( *)\nlet rec mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number (One,rest) -> add y (mult rest (shift_left y))\n  | Number (Zero,rest) -> mult rest (shift_left y)  \n\n\n\n\n(* To help automate testing\n\n\nlet tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))\n\n\n\n\n\n\nlet genPairs n = \nlet half = n / 2 in\nlet rec helper k = \nif k > half \nthen []\nelse \n(k,n-k) :: (helper (k+1))\nin \nhelper 0\n\nlet rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) \n\n*)(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype digit = Zero |  One\n\ntype binary = Number of digit * binary | End\n\ntype nat = Z | Succ of nat\n\nexception Invalid_operation\n\n\nlet rec bin_of_int n =  if n = 0 \n  then Number (Zero,End)\n  else \n  if n = 1 \n  then Number (One, End)\n  else \n  if  n mod 2 = 0 \n  then Number (Zero, bin_of_int (n/2))\n  else \n    Number (One, bin_of_int (n/2))\n                        \n                        \nlet rec toList n = match n with \n  | Number (x,tl) -> x :: (toList tl)\n  | End -> []\n\nlet rec toBin xs = match xs with \n  | [] -> End\n  | x :: xs -> Number (x,toBin xs)\n\n\nlet t = toBin [Zero;Zero;One];;\n\n\nlet rec inc num = match num with \n  | Number (Zero,tl) -> Number (One,tl)\n  | Number (One,tl) -> Number (Zero, inc tl)\n  | End -> Number (One,End) \n\n\nexception Cannot_borrow\n\nlet borrow num =    \n\n  let rec helper num = \n    match num with \n    | Number (Zero,tl) -> Number (One,helper tl) \n    | Number (One,tl) -> Number (Zero, tl)\n    | End -> raise Cannot_borrow\n  in (helper num)\n\n\n\nlet dec num = match num with  \n  | Number (One, tl) -> Number (Zero,tl)\n  | Number (Zero, tl) -> Number (One, borrow tl) \n  | End -> End\n\n\nlet rec int_of_bin n = match n with\n  | Number (Zero,xs) -> 2 * (int_of_bin xs)\n  | Number (One,xs) -> 2 * (int_of_bin xs) + 1\n  | End -> 0\n\n(* output is (base * carry) *)\nlet add_digit : digit -> digit -> digit * digit  = \n  (fun x y -> match (x,y) with \n     | (Zero,_) ->  (y,Zero)\n     | (_,Zero) ->   (x,Zero)\n     | (One,One) -> (Zero,One) )\n\nlet rec add x y = match (x,y) with\n  | (End,_) -> y\n  | (_,End) -> x \n  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in\n      let rest = add xs ys in\n      match carry with \n      | Zero -> Number (base,rest)\n      | One -> Number (base, inc rest)\n\n\ntype comparison = EQ | GT | LT \n\nlet compare_digit x y = match (x,y) with\n  | (Zero,One) -> LT \n  | (One,Zero) -> GT \n  | _ -> EQ\n\nlet rec compare : binary -> binary -> comparison = \n  (fun x y -> match (x,y) with \n     | (End,End) -> EQ\n     | (_,End) -> GT \n     | (End,_) -> LT\n     |Number (x, xs), Number (y, ys) ->   \n         match (compare xs ys) with \n         | EQ -> compare_digit x y  \n         | LT -> LT \n         | GT -> GT    \n                                                    \n  )\n\n\n\nlet shift_left x = Number (Zero,x)\n\n\n(* Partial function *)\nlet shift_right n = match n with \n  | Number (x,End) -> n\n  | Number (x,xs) -> xs\n\n\nlet rec rshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (rshift x) in \n         (fun x -> shift_right (f x)) \n  )\n\n\nlet rec lshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (lshift x) in \n         (fun x -> shift_left (f x)) \n  )\n\n(* Russian multiplication *)\n(* Cannot derive a bound :( *)\nlet rec russ_mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number(Zero,rest) -> russ_mult rest (shift_left y) \n  | Number (One,rest) -> russ_mult rest (add y (shift_left y))\n\n(* Long multiplication *)\n(* Cannot derive a bound :( *)\nlet rec mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number (One,rest) -> add y (mult rest (shift_left y))\n  | Number (Zero,rest) -> mult rest (shift_left y)  \n\n\n\n\n(* To help automate testing\n\n\nlet tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))\n\n\n\n\n\n\nlet genPairs n = \nlet half = n / 2 in\nlet rec helper k = \nif k > half \nthen []\nelse \n(k,n-k) :: (helper (k+1))\nin \nhelper 0\n\nlet rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) \n\n*)\n\nYou ran the grader 13 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+
+    
+type digit = Zero |  One
+
+type binary = Number of digit * binary | End
+
+type nat = Z | Succ of nat
+
+exception Invalid_operation
+
+
+let rec bin_of_int n =  if n = 0 
+  then Number (Zero,End)
+  else 
+  if n = 1 
+  then Number (One, End)
+  else 
+  if  n mod 2 = 0 
+  then Number (Zero, bin_of_int (n/2))
+  else 
+    Number (One, bin_of_int (n/2))
+                        
+                        
+let rec toList n = match n with 
+  | Number (x,tl) -> x :: (toList tl)
+  | End -> []
+
+let rec toBin xs = match xs with 
+  | [] -> End
+  | x :: xs -> Number (x,toBin xs)
+
+
+let t = toBin [Zero;Zero;One];;
+
+
+let rec inc num = match num with 
+  | Number (Zero,tl) -> Number (One,tl)
+  | Number (One,tl) -> Number (Zero, inc tl)
+  | End -> Number (One,End) 
+
+
+exception Cannot_borrow
+
+let borrow num =    
+
+  let rec helper num = 
+    match num with 
+    | Number (Zero,tl) -> Number (One,helper tl) 
+    | Number (One,tl) -> Number (Zero, tl)
+    | End -> raise Cannot_borrow
+  in (helper num)
+
+
+
+let dec num = match num with  
+  | Number (One, tl) -> Number (Zero,tl)
+  | Number (Zero, tl) -> Number (One, borrow tl) 
+  | End -> End
+
+
+let rec int_of_bin n = match n with
+  | Number (Zero,xs) -> 2 * (int_of_bin xs)
+  | Number (One,xs) -> 2 * (int_of_bin xs) + 1
+  | End -> 0
+
+(* output is (base * carry) *)
+let add_digit : digit -> digit -> digit * digit  = 
+  (fun x y -> match (x,y) with 
+     | (Zero,_) ->  (y,Zero)
+     | (_,Zero) ->   (x,Zero)
+     | (One,One) -> (Zero,One) )
+
+let rec add x y = match (x,y) with
+  | (End,_) -> y
+  | (_,End) -> x 
+  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in
+      let rest = add xs ys in
+      match carry with 
+      | Zero -> Number (base,rest)
+      | One -> Number (base, inc rest)
+
+
+type comparison = EQ | GT | LT 
+
+let compare_digit x y = match (x,y) with
+  | (Zero,One) -> LT 
+  | (One,Zero) -> GT 
+  | _ -> EQ
+
+let rec compare : binary -> binary -> comparison = 
+  (fun x y -> match (x,y) with 
+     | (End,End) -> EQ
+     | (_,End) -> GT 
+     | (End,_) -> LT
+     |Number (x, xs), Number (y, ys) ->   
+         match (compare xs ys) with 
+         | EQ -> compare_digit x y  
+         | LT -> LT 
+         | GT -> GT    
+                                                    
+  )
+
+
+
+let shift_left x = Number (Zero,x)
+
+
+(* Partial function *)
+let shift_right n = match n with 
+  | Number (x,End) -> n
+  | Number (x,xs) -> xs
+
+
+let rec rshift : nat -> (binary -> binary) = 
+  (fun n -> match n with 
+     | Z -> (fun x -> x)
+     | (Succ x) -> let f = (rshift x) in 
+         (fun x -> shift_right (f x)) 
+  )
+
+
+let rec lshift : nat -> (binary -> binary) = 
+  (fun n -> match n with 
+     | Z -> (fun x -> x)
+     | (Succ x) -> let f = (lshift x) in 
+         (fun x -> shift_left (f x)) 
+  )
+
+(* Russian multiplication *)
+(* Cannot derive a bound :( *)
+let rec russ_mult x y = match x with 
+  | Number (Zero,End) -> x
+  | Number (One,End) -> y
+  | Number(Zero,rest) -> russ_mult rest (shift_left y) 
+  | Number (One,rest) -> russ_mult rest (add y (shift_left y))
+
+(* Long multiplication *)
+(* Cannot derive a bound :( *)
+let rec mult x y = match x with 
+  | Number (Zero,End) -> x
+  | Number (One,End) -> y
+  | Number (One,rest) -> add y (mult rest (shift_left y))
+  | Number (Zero,rest) -> mult rest (shift_left y)  
+
+
+
+
+(* To help automate testing
+
+
+let tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))
+
+
+
+
+
+
+let genPairs n = 
+let half = n / 2 in
+let rec helper k = 
+if k > half 
+then []
+else 
+(k,n-k) :: (helper (k+1))
+in 
+helper 0
+
+let rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) 
+
+*)">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype digit = Zero |  One\n\ntype binary = Number of digit * binary | End\n\ntype nat = Z | Succ of nat\n\nexception Invalid_operation\n\n\nlet rec bin_of_int n =  if n = 0 \n  then Number (Zero,End)\n  else \n  if n = 1 \n  then Number (One, End)\n  else \n  if  n mod 2 = 0 \n  then Number (Zero, bin_of_int (n/2))\n  else \n    Number (One, bin_of_int (n/2))\n                        \n                        \nlet rec toList n = match n with \n  | Number (x,tl) -> x :: (toList tl)\n  | End -> []\n\nlet rec toBin xs = match xs with \n  | [] -> End\n  | x :: xs -> Number (x,toBin xs)\n\n\nlet t = toBin [Zero;Zero;One];;\n\n\nlet rec inc num = match num with \n  | Number (Zero,tl) -> Number (One,tl)\n  | Number (One,tl) -> Number (Zero, inc tl)\n  | End -> Number (One,End) \n\n\nexception Cannot_borrow\n\nlet borrow num =    \n\n  let rec helper num = \n    match num with \n    | Number (Zero,tl) -> Number (One,helper tl) \n    | Number (One,tl) -> Number (Zero, tl)\n    | End -> raise Cannot_borrow\n  in (helper num)\n\n\n\nlet dec num = match num with  \n  | Number (One, tl) -> Number (Zero,tl)\n  | Number (Zero, tl) -> Number (One, borrow tl) \n  | End -> End\n\n\nlet rec int_of_bin n = match n with\n  | Number (Zero,xs) -> 2 * (int_of_bin xs)\n  | Number (One,xs) -> 2 * (int_of_bin xs) + 1\n  | End -> 0\n\n(* output is (base * carry) *)\nlet add_digit : digit -> digit -> digit * digit  = \n  (fun x y -> match (x,y) with \n     | (Zero,_) ->  (y,Zero)\n     | (_,Zero) ->   (x,Zero)\n     | (One,One) -> (Zero,One) )\n\nlet rec add x y = match (x,y) with\n  | (End,_) -> y\n  | (_,End) -> x \n  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in\n      let rest = add xs ys in\n      match carry with \n      | Zero -> Number (base,rest)\n      | One -> Number (base, inc rest)\n\n\ntype comparison = EQ | GT | LT \n\nlet compare_digit x y = match (x,y) with\n  | (Zero,One) -> LT \n  | (One,Zero) -> GT \n  | _ -> EQ\n\nlet rec compare : binary -> binary -> comparison = \n  (fun x y -> match (x,y) with \n     | (End,End) -> EQ\n     | (_,End) -> GT \n     | (End,_) -> LT\n     |Number (x, xs), Number (y, ys) ->   \n         match (compare xs ys) with \n         | EQ -> compare_digit x y  \n         | LT -> LT \n         | GT -> GT    \n                                                    \n  )\n\n\n\nlet shift_left x = Number (Zero,x)\n\n\n(* Partial function *)\nlet shift_right n = match n with \n  | Number (x,End) -> n\n  | Number (x,xs) -> xs\n\n\nlet rec rshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (rshift x) in \n         (fun x -> shift_right (f x)) \n  )\n\n\nlet rec lshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (lshift x) in \n         (fun x -> shift_left (f x)) \n  )\n\n(* Russian multiplication *)\n(* Cannot derive a bound :( *)\nlet rec russ_mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number(Zero,rest) -> russ_mult rest (shift_left y) \n  | Number (One,rest) -> russ_mult rest (add y (shift_left y))\n\n(* Long multiplication *)\n(* Cannot derive a bound :( *)\nlet rec mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number (One,rest) -> add y (mult rest (shift_left y))\n  | Number (Zero,rest) -> mult rest (shift_left y)  \n\n\n\n\n(* To help automate testing\n\n\nlet tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))\n\n\n\n\n\n\nlet genPairs n = \nlet half = n / 2 in\nlet rec helper k = \nif k > half \nthen []\nelse \n(k,n-k) :: (helper (k+1))\nin \nhelper 0\n\nlet rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) \n\n*)(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype digit = Zero |  One\n\ntype binary = Number of digit * binary | End\n\ntype nat = Z | Succ of nat\n\nexception Invalid_operation\n\n\nlet rec bin_of_int n =  if n = 0 \n  then Number (Zero,End)\n  else \n  if n = 1 \n  then Number (One, End)\n  else \n  if  n mod 2 = 0 \n  then Number (Zero, bin_of_int (n/2))\n  else \n    Number (One, bin_of_int (n/2))\n                        \n                        \nlet rec toList n = match n with \n  | Number (x,tl) -> x :: (toList tl)\n  | End -> []\n\nlet rec toBin xs = match xs with \n  | [] -> End\n  | x :: xs -> Number (x,toBin xs)\n\n\nlet t = toBin [Zero;Zero;One];;\n\n\nlet rec inc num = match num with \n  | Number (Zero,tl) -> Number (One,tl)\n  | Number (One,tl) -> Number (Zero, inc tl)\n  | End -> Number (One,End) \n\n\nexception Cannot_borrow\n\nlet borrow num =    \n\n  let rec helper num = \n    match num with \n    | Number (Zero,tl) -> Number (One,helper tl) \n    | Number (One,tl) -> Number (Zero, tl)\n    | End -> raise Cannot_borrow\n  in (helper num)\n\n\n\nlet dec num = match num with  \n  | Number (One, tl) -> Number (Zero,tl)\n  | Number (Zero, tl) -> Number (One, borrow tl) \n  | End -> End\n\n\nlet rec int_of_bin n = match n with\n  | Number (Zero,xs) -> 2 * (int_of_bin xs)\n  | Number (One,xs) -> 2 * (int_of_bin xs) + 1\n  | End -> 0\n\n(* output is (base * carry) *)\nlet add_digit : digit -> digit -> digit * digit  = \n  (fun x y -> match (x,y) with \n     | (Zero,_) ->  (y,Zero)\n     | (_,Zero) ->   (x,Zero)\n     | (One,One) -> (Zero,One) )\n\nlet rec add x y = match (x,y) with\n  | (End,_) -> y\n  | (_,End) -> x \n  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in\n      let rest = add xs ys in\n      match carry with \n      | Zero -> Number (base,rest)\n      | One -> Number (base, inc rest)\n\n\ntype comparison = EQ | GT | LT \n\nlet compare_digit x y = match (x,y) with\n  | (Zero,One) -> LT \n  | (One,Zero) -> GT \n  | _ -> EQ\n\nlet rec compare : binary -> binary -> comparison = \n  (fun x y -> match (x,y) with \n     | (End,End) -> EQ\n     | (_,End) -> GT \n     | (End,_) -> LT\n     |Number (x, xs), Number (y, ys) ->   \n         match (compare xs ys) with \n         | EQ -> compare_digit x y  \n         | LT -> LT \n         | GT -> GT    \n                                                    \n  )\n\n\n\nlet shift_left x = Number (Zero,x)\n\n\n(* Partial function *)\nlet shift_right n = match n with \n  | Number (x,End) -> n\n  | Number (x,xs) -> xs\n\n\nlet rec rshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (rshift x) in \n         (fun x -> shift_right (f x)) \n  )\n\n\nlet rec lshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (lshift x) in \n         (fun x -> shift_left (f x)) \n  )\n\n(* Russian multiplication *)\n(* Cannot derive a bound :( *)\nlet rec russ_mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number(Zero,rest) -> russ_mult rest (shift_left y) \n  | Number (One,rest) -> russ_mult rest (add y (shift_left y))\n\n(* Long multiplication *)\n(* Cannot derive a bound :( *)\nlet rec mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number (One,rest) -> add y (mult rest (shift_left y))\n  | Number (Zero,rest) -> mult rest (shift_left y)  \n\n\n\n\n(* To help automate testing\n\n\nlet tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))\n\n\n\n\n\n\nlet genPairs n = \nlet half = n / 2 in\nlet rec helper k = \nif k > half \nthen []\nelse \n(k,n-k) :: (helper (k+1))\nin \nhelper 0\n\nlet rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) \n\n*)\n\nYou ran the grader 14 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+
+    
+type digit = Zero |  One
+
+type binary = Number of digit * binary | End
+
+type nat = Z | Succ of nat
+
+exception Invalid_operation
+
+
+let rec bin_of_int n =  if n = 0 
+  then Number (Zero,End)
+  else 
+  if n = 1 
+  then Number (One, End)
+  else 
+  if  n mod 2 = 0 
+  then Number (Zero, bin_of_int (n/2))
+  else 
+    Number (One, bin_of_int (n/2))
+                        
+                        
+let rec toList n = match n with 
+  | Number (x,tl) -> x :: (toList tl)
+  | End -> []
+
+let rec toBin xs = match xs with 
+  | [] -> End
+  | x :: xs -> Number (x,toBin xs)
+
+
+let t = toBin [Zero;Zero;One];;
+
+
+let rec inc num = match num with 
+  | Number (Zero,tl) -> Number (One,tl)
+  | Number (One,tl) -> Number (Zero, inc tl)
+  | End -> Number (One,End) 
+
+
+exception Cannot_borrow
+
+let borrow num =    
+
+  let rec helper num = 
+    match num with 
+    | Number (Zero,tl) -> Number (One,helper tl) 
+    | Number (One,tl) -> Number (Zero, tl)
+    | End -> raise Cannot_borrow
+  in (helper num)
+
+
+
+let dec num = match num with  
+  | Number (One, tl) -> Number (Zero,tl)
+  | Number (Zero, tl) -> Number (One, borrow tl) 
+  | End -> End
+
+
+let rec int_of_bin n = match n with
+  | Number (Zero,xs) -> 2 * (int_of_bin xs)
+  | Number (One,xs) -> 2 * (int_of_bin xs) + 1
+  | End -> 0
+
+(* output is (base * carry) *)
+let add_digit : digit -> digit -> digit * digit  = 
+  (fun x y -> match (x,y) with 
+     | (Zero,_) ->  (y,Zero)
+     | (_,Zero) ->   (x,Zero)
+     | (One,One) -> (Zero,One) )
+
+let rec add x y = match (x,y) with
+  | (End,_) -> y
+  | (_,End) -> x 
+  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in
+      let rest = add xs ys in
+      match carry with 
+      | Zero -> Number (base,rest)
+      | One -> Number (base, inc rest)
+
+
+type comparison = EQ | GT | LT 
+
+let compare_digit x y = match (x,y) with
+  | (Zero,One) -> LT 
+  | (One,Zero) -> GT 
+  | _ -> EQ
+
+let rec compare : binary -> binary -> comparison = 
+  (fun x y -> match (x,y) with 
+     | (End,End) -> EQ
+     | (_,End) -> GT 
+     | (End,_) -> LT
+     |Number (x, xs), Number (y, ys) ->   
+         match (compare xs ys) with 
+         | EQ -> compare_digit x y  
+         | LT -> LT 
+         | GT -> GT    
+                                                    
+  )
+
+
+
+let shift_left x = Number (Zero,x)
+
+
+(* Partial function *)
+let shift_right n = match n with 
+  | Number (x,End) -> n
+  | Number (x,xs) -> xs
+
+
+let rec rshift : nat -> (binary -> binary) = 
+  (fun n -> match n with 
+     | Z -> (fun x -> x)
+     | (Succ x) -> let f = (rshift x) in 
+         (fun x -> shift_right (f x)) 
+  )
+
+
+let rec lshift : nat -> (binary -> binary) = 
+  (fun n -> match n with 
+     | Z -> (fun x -> x)
+     | (Succ x) -> let f = (lshift x) in 
+         (fun x -> shift_left (f x)) 
+  )
+
+(* Russian multiplication *)
+(* Cannot derive a bound :( *)
+let rec russ_mult x y = match x with 
+  | Number (Zero,End) -> x
+  | Number (One,End) -> y
+  | Number(Zero,rest) -> russ_mult rest (shift_left y) 
+  | Number (One,rest) -> russ_mult rest (add y (shift_left y))
+
+(* Long multiplication *)
+(* Cannot derive a bound :( *)
+let rec mult x y = match x with 
+  | Number (Zero,End) -> x
+  | Number (One,End) -> y
+  | Number (One,rest) -> add y (mult rest (shift_left y))
+  | Number (Zero,rest) -> mult rest (shift_left y)  
+
+
+
+
+(* To help automate testing
+
+
+let tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))
+
+
+
+
+
+
+let genPairs n = 
+let half = n / 2 in
+let rec helper k = 
+if k > half 
+then []
+else 
+(k,n-k) :: (helper (k+1))
+in 
+helper 0
+
+let rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) 
+
+*)">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype digit = Zero |  One\n\ntype binary = Number of digit * binary | End\n\ntype nat = Z | Succ of nat\n\nexception Invalid_operation\n\n\nlet rec bin_of_int n =  if n = 0 \n  then Number (Zero,End)\n  else \n  if n = 1 \n  then Number (One, End)\n  else \n  if  n mod 2 = 0 \n  then Number (Zero, bin_of_int (n/2))\n  else \n    Number (One, bin_of_int (n/2))\n                        \n                        \nlet rec toList n = match n with \n  | Number (x,tl) -> x :: (toList tl)\n  | End -> []\n\nlet rec toBin xs = match xs with \n  | [] -> End\n  | x :: xs -> Number (x,toBin xs)\n\n\nlet t = toBin [Zero;Zero;One];;\n\n\nlet rec inc num = match num with \n  | Number (Zero,tl) -> Number (One,tl)\n  | Number (One,tl) -> Number (Zero, inc tl)\n  | End -> Number (One,End) \n\n\nexception Cannot_borrow\n\nlet borrow num =    \n\n  let rec helper num = \n    match num with \n    | Number (Zero,tl) -> Number (One,helper tl) \n    | Number (One,tl) -> Number (Zero, tl)\n    | End -> raise Cannot_borrow\n  in (helper num)\n\n\n\nlet dec num = match num with  \n  | Number (One, tl) -> Number (Zero,tl)\n  | Number (Zero, tl) -> Number (One, borrow tl) \n  | End -> End\n\n\nlet rec int_of_bin n = match n with\n  | Number (Zero,xs) -> 2 * (int_of_bin xs)\n  | Number (One,xs) -> 2 * (int_of_bin xs) + 1\n  | End -> 0\n\n(* output is (base * carry) *)\nlet add_digit : digit -> digit -> digit * digit  = \n  (fun x y -> match (x,y) with \n     | (Zero,_) ->  (y,Zero)\n     | (_,Zero) ->   (x,Zero)\n     | (One,One) -> (Zero,One) )\n\nlet rec add x y = match (x,y) with\n  | (End,_) -> y\n  | (_,End) -> x \n  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in\n      let rest = add xs ys in\n      match carry with \n      | Zero -> Number (base,rest)\n      | One -> Number (base, inc rest)\n\n\ntype comparison = EQ | GT | LT \n\nlet compare_digit x y = match (x,y) with\n  | (Zero,One) -> LT \n  | (One,Zero) -> GT \n  | _ -> EQ\n\nlet rec compare : binary -> binary -> comparison = \n  (fun x y -> match (x,y) with \n     | (End,End) -> EQ\n     | (_,End) -> GT \n     | (End,_) -> LT\n     |Number (x, xs), Number (y, ys) ->   \n         match (compare xs ys) with \n         | EQ -> compare_digit x y  \n         | LT -> LT \n         | GT -> GT    \n                                                    \n  )\n\n\n\nlet shift_left x = Number (Zero,x)\n\n\n(* Partial function *)\nlet shift_right n = match n with \n  | Number (x,End) -> n\n  | Number (x,xs) -> xs\n\n\nlet rec rshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (rshift x) in \n         (fun x -> shift_right (f x)) \n  )\n\n\nlet rec lshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (lshift x) in \n         (fun x -> shift_left (f x)) \n  )\n\n(* Russian multiplication *)\n(* Cannot derive a bound :( *)\nlet rec russ_mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number(Zero,rest) -> russ_mult rest (shift_left y) \n  | Number (One,rest) -> russ_mult rest (add y (shift_left y))\n\n(* Long multiplication *)\n(* Cannot derive a bound :( *)\nlet rec mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number (One,rest) -> add y (mult rest (shift_left y))\n  | Number (Zero,rest) -> mult rest (shift_left y)  \n\n\n\n\n(* To help automate testing\n\n\nlet tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))\n\n\n\n\n\n\nlet genPairs n = \nlet half = n / 2 in\nlet rec helper k = \nif k > half \nthen []\nelse \n(k,n-k) :: (helper (k+1))\nin \nhelper 0\n\nlet rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) \n\n*)(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype digit = Zero |  One\n\ntype binary = Number of digit * binary | End\n\ntype nat = Z | Succ of nat\n\nexception Invalid_operation\n\n\nlet rec bin_of_int n =  if n = 0 \n  then Number (Zero,End)\n  else \n  if n = 1 \n  then Number (One, End)\n  else \n  if  n mod 2 = 0 \n  then Number (Zero, bin_of_int (n/2))\n  else \n    Number (One, bin_of_int (n/2))\n                        \n                        \nlet rec toList n = match n with \n  | Number (x,tl) -> x :: (toList tl)\n  | End -> []\n\nlet rec toBin xs = match xs with \n  | [] -> End\n  | x :: xs -> Number (x,toBin xs)\n\n\nlet t = toBin [Zero;Zero;One];;\n\n\nlet rec inc num = match num with \n  | Number (Zero,tl) -> Number (One,tl)\n  | Number (One,tl) -> Number (Zero, inc tl)\n  | End -> Number (One,End) \n\n\nexception Cannot_borrow\n\nlet borrow num =    \n\n  let rec helper num = \n    match num with \n    | Number (Zero,tl) -> Number (One,helper tl) \n    | Number (One,tl) -> Number (Zero, tl)\n    | End -> raise Cannot_borrow\n  in (helper num)\n\n\n\nlet dec num = match num with  \n  | Number (One, tl) -> Number (Zero,tl)\n  | Number (Zero, tl) -> Number (One, borrow tl) \n  | End -> End\n\n\nlet rec int_of_bin n = match n with\n  | Number (Zero,xs) -> 2 * (int_of_bin xs)\n  | Number (One,xs) -> 2 * (int_of_bin xs) + 1\n  | End -> 0\n\n(* output is (base * carry) *)\nlet add_digit : digit -> digit -> digit * digit  = \n  (fun x y -> match (x,y) with \n     | (Zero,_) ->  (y,Zero)\n     | (_,Zero) ->   (x,Zero)\n     | (One,One) -> (Zero,One) )\n\nlet rec add x y = match (x,y) with\n  | (End,_) -> y\n  | (_,End) -> x \n  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in\n      let rest = add xs ys in\n      match carry with \n      | Zero -> Number (base,rest)\n      | One -> Number (base, inc rest)\n\n\ntype comparison = EQ | GT | LT \n\nlet compare_digit x y = match (x,y) with\n  | (Zero,One) -> LT \n  | (One,Zero) -> GT \n  | _ -> EQ\n\nlet rec compare : binary -> binary -> comparison = \n  (fun x y -> match (x,y) with \n     | (End,End) -> EQ\n     | (_,End) -> GT \n     | (End,_) -> LT\n     |Number (x, xs), Number (y, ys) ->   \n         match (compare xs ys) with \n         | EQ -> compare_digit x y  \n         | LT -> LT \n         | GT -> GT    \n                                                    \n  )\n\n\n\nlet shift_left x = Number (Zero,x)\n\n\n(* Partial function *)\nlet shift_right n = match n with \n  | Number (x,End) -> n\n  | Number (x,xs) -> xs\n\n\nlet rec rshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (rshift x) in \n         (fun x -> shift_right (f x)) \n  )\n\n\nlet rec lshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (lshift x) in \n         (fun x -> shift_left (f x)) \n  )\n\n(* Russian multiplication *)\n(* Cannot derive a bound :( *)\nlet rec russ_mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number(Zero,rest) -> russ_mult rest (shift_left y) \n  | Number (One,rest) -> russ_mult rest (add y (shift_left y))\n\n(* Long multiplication *)\n(* Cannot derive a bound :( *)\nlet rec mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number (One,rest) -> add y (mult rest (shift_left y))\n  | Number (Zero,rest) -> mult rest (shift_left y)  \n\n\n\n\n(* To help automate testing\n\n\nlet tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))\n\n\n\n\n\n\nlet genPairs n = \nlet half = n / 2 in\nlet rec helper k = \nif k > half \nthen []\nelse \n(k,n-k) :: (helper (k+1))\nin \nhelper 0\n\nlet rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) \n\n*)\n\nYou ran the grader 15 times "))Informative))))>
+
+logged <"(* Checking if a number is even *)
+let even x =
+    x mod 2 = 0
+let rec fast_exp x k =
+  if k = 0 then 1
+  else if even k then fast_exp (x * x) (k / 2)
+  else
+    let n = fast_exp x (k - 1) in
+    x * n
+
+let rec fast_exp_aux x k acc =
+  if k = 0 then acc
+  else if even k then fast_exp_aux (x * x) (k / 2) acc
+  else fast_exp_aux x (k - 1) (x * acc)
+
+      
+
+let _ = 1 + 1
+let fast_exp_tl x k =
+  fast_exp_aux x k 1
+
+    
+type digit = Zero |  One
+
+type binary = Number of digit * binary | End
+
+type nat = Z | Succ of nat
+
+exception Invalid_operation
+
+
+let rec bin_of_int n =  if n = 0 
+  then Number (Zero,End)
+  else 
+  if n = 1 
+  then Number (One, End)
+  else 
+  if  n mod 2 = 0 
+  then Number (Zero, bin_of_int (n/2))
+  else 
+    Number (One, bin_of_int (n/2))
+                        
+                        
+let rec toList n = match n with 
+  | Number (x,tl) -> x :: (toList tl)
+  | End -> []
+
+let rec toBin xs = match xs with 
+  | [] -> End
+  | x :: xs -> Number (x,toBin xs)
+
+
+let t = toBin [Zero;Zero;One];;
+
+
+let rec inc num = match num with 
+  | Number (Zero,tl) -> Number (One,tl)
+  | Number (One,tl) -> Number (Zero, inc tl)
+  | End -> Number (One,End) 
+
+
+exception Cannot_borrow
+
+let borrow num =    
+
+  let rec helper num = 
+    match num with 
+    | Number (Zero,tl) -> Number (One,helper tl) 
+    | Number (One,tl) -> Number (Zero, tl)
+    | End -> raise Cannot_borrow
+  in (helper num)
+
+
+
+let dec num = match num with  
+  | Number (One, tl) -> Number (Zero,tl)
+  | Number (Zero, tl) -> Number (One, borrow tl) 
+  | End -> End
+
+
+let rec int_of_bin n = match n with
+  | Number (Zero,xs) -> 2 * (int_of_bin xs)
+  | Number (One,xs) -> 2 * (int_of_bin xs) + 1
+  | End -> 0
+
+(* output is (base * carry) *)
+let add_digit : digit -> digit -> digit * digit  = 
+  (fun x y -> match (x,y) with 
+     | (Zero,_) ->  (y,Zero)
+     | (_,Zero) ->   (x,Zero)
+     | (One,One) -> (Zero,One) )
+
+let rec add x y = match (x,y) with
+  | (End,_) -> y
+  | (_,End) -> x 
+  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in
+      let rest = add xs ys in
+      match carry with 
+      | Zero -> Number (base,rest)
+      | One -> Number (base, inc rest)
+
+
+type comparison = EQ | GT | LT 
+
+let compare_digit x y = match (x,y) with
+  | (Zero,One) -> LT 
+  | (One,Zero) -> GT 
+  | _ -> EQ
+
+let rec compare : binary -> binary -> comparison = 
+  (fun x y -> match (x,y) with 
+     | (End,End) -> EQ
+     | (_,End) -> GT 
+     | (End,_) -> LT
+     |Number (x, xs), Number (y, ys) ->   
+         match (compare xs ys) with 
+         | EQ -> compare_digit x y  
+         | LT -> LT 
+         | GT -> GT    
+                                                    
+  )
+
+
+
+let shift_left x = Number (Zero,x)
+
+
+(* Partial function *)
+let shift_right n = match n with 
+  | Number (x,End) -> n
+  | Number (x,xs) -> xs
+
+
+let rec rshift : nat -> (binary -> binary) = 
+  (fun n -> match n with 
+     | Z -> (fun x -> x)
+     | (Succ x) -> let f = (rshift x) in 
+         (fun x -> shift_right (f x)) 
+  )
+
+
+let rec lshift : nat -> (binary -> binary) = 
+  (fun n -> match n with 
+     | Z -> (fun x -> x)
+     | (Succ x) -> let f = (lshift x) in 
+         (fun x -> shift_left (f x)) 
+  )
+
+(* Russian multiplication *)
+(* Cannot derive a bound :( *)
+let rec russ_mult x y = match x with 
+  | Number (Zero,End) -> x
+  | Number (One,End) -> y
+  | Number(Zero,rest) -> russ_mult rest (shift_left y) 
+  | Number (One,rest) -> russ_mult rest (add y (shift_left y))
+
+(* Long multiplication *)
+(* Cannot derive a bound :( *)
+let rec mult x y = match x with 
+  | Number (Zero,End) -> x
+  | Number (One,End) -> y
+  | Number (One,rest) -> add y (mult rest (shift_left y))
+  | Number (Zero,rest) -> mult rest (shift_left y)  
+
+
+
+
+(* To help automate testing
+
+
+let tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))
+
+
+
+
+
+
+let genPairs n = 
+let half = n / 2 in
+let rec helper k = 
+if k > half 
+then []
+else 
+(k,n-k) :: (helper (k+1))
+in 
+helper 0
+
+let rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) 
+
+*)">
+
+Converted to sexp :)
+Reply <((Section((Text" Resource analysis report "))((Message((Text"What is going on ?(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype digit = Zero |  One\n\ntype binary = Number of digit * binary | End\n\ntype nat = Z | Succ of nat\n\nexception Invalid_operation\n\n\nlet rec bin_of_int n =  if n = 0 \n  then Number (Zero,End)\n  else \n  if n = 1 \n  then Number (One, End)\n  else \n  if  n mod 2 = 0 \n  then Number (Zero, bin_of_int (n/2))\n  else \n    Number (One, bin_of_int (n/2))\n                        \n                        \nlet rec toList n = match n with \n  | Number (x,tl) -> x :: (toList tl)\n  | End -> []\n\nlet rec toBin xs = match xs with \n  | [] -> End\n  | x :: xs -> Number (x,toBin xs)\n\n\nlet t = toBin [Zero;Zero;One];;\n\n\nlet rec inc num = match num with \n  | Number (Zero,tl) -> Number (One,tl)\n  | Number (One,tl) -> Number (Zero, inc tl)\n  | End -> Number (One,End) \n\n\nexception Cannot_borrow\n\nlet borrow num =    \n\n  let rec helper num = \n    match num with \n    | Number (Zero,tl) -> Number (One,helper tl) \n    | Number (One,tl) -> Number (Zero, tl)\n    | End -> raise Cannot_borrow\n  in (helper num)\n\n\n\nlet dec num = match num with  \n  | Number (One, tl) -> Number (Zero,tl)\n  | Number (Zero, tl) -> Number (One, borrow tl) \n  | End -> End\n\n\nlet rec int_of_bin n = match n with\n  | Number (Zero,xs) -> 2 * (int_of_bin xs)\n  | Number (One,xs) -> 2 * (int_of_bin xs) + 1\n  | End -> 0\n\n(* output is (base * carry) *)\nlet add_digit : digit -> digit -> digit * digit  = \n  (fun x y -> match (x,y) with \n     | (Zero,_) ->  (y,Zero)\n     | (_,Zero) ->   (x,Zero)\n     | (One,One) -> (Zero,One) )\n\nlet rec add x y = match (x,y) with\n  | (End,_) -> y\n  | (_,End) -> x \n  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in\n      let rest = add xs ys in\n      match carry with \n      | Zero -> Number (base,rest)\n      | One -> Number (base, inc rest)\n\n\ntype comparison = EQ | GT | LT \n\nlet compare_digit x y = match (x,y) with\n  | (Zero,One) -> LT \n  | (One,Zero) -> GT \n  | _ -> EQ\n\nlet rec compare : binary -> binary -> comparison = \n  (fun x y -> match (x,y) with \n     | (End,End) -> EQ\n     | (_,End) -> GT \n     | (End,_) -> LT\n     |Number (x, xs), Number (y, ys) ->   \n         match (compare xs ys) with \n         | EQ -> compare_digit x y  \n         | LT -> LT \n         | GT -> GT    \n                                                    \n  )\n\n\n\nlet shift_left x = Number (Zero,x)\n\n\n(* Partial function *)\nlet shift_right n = match n with \n  | Number (x,End) -> n\n  | Number (x,xs) -> xs\n\n\nlet rec rshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (rshift x) in \n         (fun x -> shift_right (f x)) \n  )\n\n\nlet rec lshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (lshift x) in \n         (fun x -> shift_left (f x)) \n  )\n\n(* Russian multiplication *)\n(* Cannot derive a bound :( *)\nlet rec russ_mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number(Zero,rest) -> russ_mult rest (shift_left y) \n  | Number (One,rest) -> russ_mult rest (add y (shift_left y))\n\n(* Long multiplication *)\n(* Cannot derive a bound :( *)\nlet rec mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number (One,rest) -> add y (mult rest (shift_left y))\n  | Number (Zero,rest) -> mult rest (shift_left y)  \n\n\n\n\n(* To help automate testing\n\n\nlet tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))\n\n\n\n\n\n\nlet genPairs n = \nlet half = n / 2 in\nlet rec helper k = \nif k > half \nthen []\nelse \n(k,n-k) :: (helper (k+1))\nin \nhelper 0\n\nlet rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) \n\n*)(* Checking if a number is even *)\nlet even x =\n    x mod 2 = 0\nlet rec fast_exp x k =\n  if k = 0 then 1\n  else if even k then fast_exp (x * x) (k / 2)\n  else\n    let n = fast_exp x (k - 1) in\n    x * n\n\nlet rec fast_exp_aux x k acc =\n  if k = 0 then acc\n  else if even k then fast_exp_aux (x * x) (k / 2) acc\n  else fast_exp_aux x (k - 1) (x * acc)\n\n      \n\nlet _ = 1 + 1\nlet fast_exp_tl x k =\n  fast_exp_aux x k 1\n\n    \ntype digit = Zero |  One\n\ntype binary = Number of digit * binary | End\n\ntype nat = Z | Succ of nat\n\nexception Invalid_operation\n\n\nlet rec bin_of_int n =  if n = 0 \n  then Number (Zero,End)\n  else \n  if n = 1 \n  then Number (One, End)\n  else \n  if  n mod 2 = 0 \n  then Number (Zero, bin_of_int (n/2))\n  else \n    Number (One, bin_of_int (n/2))\n                        \n                        \nlet rec toList n = match n with \n  | Number (x,tl) -> x :: (toList tl)\n  | End -> []\n\nlet rec toBin xs = match xs with \n  | [] -> End\n  | x :: xs -> Number (x,toBin xs)\n\n\nlet t = toBin [Zero;Zero;One];;\n\n\nlet rec inc num = match num with \n  | Number (Zero,tl) -> Number (One,tl)\n  | Number (One,tl) -> Number (Zero, inc tl)\n  | End -> Number (One,End) \n\n\nexception Cannot_borrow\n\nlet borrow num =    \n\n  let rec helper num = \n    match num with \n    | Number (Zero,tl) -> Number (One,helper tl) \n    | Number (One,tl) -> Number (Zero, tl)\n    | End -> raise Cannot_borrow\n  in (helper num)\n\n\n\nlet dec num = match num with  \n  | Number (One, tl) -> Number (Zero,tl)\n  | Number (Zero, tl) -> Number (One, borrow tl) \n  | End -> End\n\n\nlet rec int_of_bin n = match n with\n  | Number (Zero,xs) -> 2 * (int_of_bin xs)\n  | Number (One,xs) -> 2 * (int_of_bin xs) + 1\n  | End -> 0\n\n(* output is (base * carry) *)\nlet add_digit : digit -> digit -> digit * digit  = \n  (fun x y -> match (x,y) with \n     | (Zero,_) ->  (y,Zero)\n     | (_,Zero) ->   (x,Zero)\n     | (One,One) -> (Zero,One) )\n\nlet rec add x y = match (x,y) with\n  | (End,_) -> y\n  | (_,End) -> x \n  | Number (x,xs) , Number (y,ys) ->  let (base,carry) = add_digit x y in\n      let rest = add xs ys in\n      match carry with \n      | Zero -> Number (base,rest)\n      | One -> Number (base, inc rest)\n\n\ntype comparison = EQ | GT | LT \n\nlet compare_digit x y = match (x,y) with\n  | (Zero,One) -> LT \n  | (One,Zero) -> GT \n  | _ -> EQ\n\nlet rec compare : binary -> binary -> comparison = \n  (fun x y -> match (x,y) with \n     | (End,End) -> EQ\n     | (_,End) -> GT \n     | (End,_) -> LT\n     |Number (x, xs), Number (y, ys) ->   \n         match (compare xs ys) with \n         | EQ -> compare_digit x y  \n         | LT -> LT \n         | GT -> GT    \n                                                    \n  )\n\n\n\nlet shift_left x = Number (Zero,x)\n\n\n(* Partial function *)\nlet shift_right n = match n with \n  | Number (x,End) -> n\n  | Number (x,xs) -> xs\n\n\nlet rec rshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (rshift x) in \n         (fun x -> shift_right (f x)) \n  )\n\n\nlet rec lshift : nat -> (binary -> binary) = \n  (fun n -> match n with \n     | Z -> (fun x -> x)\n     | (Succ x) -> let f = (lshift x) in \n         (fun x -> shift_left (f x)) \n  )\n\n(* Russian multiplication *)\n(* Cannot derive a bound :( *)\nlet rec russ_mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number(Zero,rest) -> russ_mult rest (shift_left y) \n  | Number (One,rest) -> russ_mult rest (add y (shift_left y))\n\n(* Long multiplication *)\n(* Cannot derive a bound :( *)\nlet rec mult x y = match x with \n  | Number (Zero,End) -> x\n  | Number (One,End) -> y\n  | Number (One,rest) -> add y (mult rest (shift_left y))\n  | Number (Zero,rest) -> mult rest (shift_left y)  \n\n\n\n\n(* To help automate testing\n\n\nlet tester f g  (x,y) =  (f (bin_of_int x) (bin_of_int y)) <> (bin_of_int (g x y))\n\n\n\n\n\n\nlet genPairs n = \nlet half = n / 2 in\nlet rec helper k = \nif k > half \nthen []\nelse \n(k,n-k) :: (helper (k+1))\nin \nhelper 0\n\nlet rec genTill n = if n = 1 then (genPairs 1) else  (genPairs (n)) @ (genTill (n-1)) \n\n*)\n\nYou ran the grader 16 times "))Informative))))>
+
