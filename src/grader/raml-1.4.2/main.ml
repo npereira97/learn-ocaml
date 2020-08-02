@@ -223,10 +223,26 @@ module Learnocaml_report = struct
 		   | Output of string [@@deriving sexp]
 end
 
-let format_text s = 	let open Learnocaml_report in 
-			foldl (fun x y -> x @ [Break;y]) [] (List.map (String.split_on_chars ~on:['\n'] s) (fun x -> Text x))
+
+
+let format_text s = 	
+			let rec weave e lst = 
+				match lst with 
+				| [] -> []
+				| x :: xs -> x :: e :: (weave e xs) in 
+			let open Learnocaml_report in 
+			 weave Break (List.map (String.split_on_chars ~on:['\n'] s) (fun x -> Text x))
 
 let gen_func_learnocaml_report ?(simple_name=false) ?(indent="")= 
+
+
+		let rec weave e lst = 
+				match lst with 
+				| [] -> []
+				| x :: xs -> x :: e :: (weave e xs) in
+		let lines s= String.split_on_chars ~on:['\n'] s in
+
+
 		let buf = Buffer.create 10000 in
 		let f = Format.formatter_of_buffer buf in
 		let string_of_buf () = 
@@ -254,15 +270,21 @@ let gen_func_learnocaml_report ?(simple_name=false) ?(indent="")=
 				    in
 				
 				let (pol, descs) = Polynomials.describe_pol atanno in
+				let open Learnocaml_report in
+				let separator = Text "===========================" in
 				let fprint_raml_type f t = Pprint.fprint_raml_type ~indent:2 f t in
-    				let type_string = string_of_buf (fprintf f "@.== %s :\n%s%a@." fid indent fprint_raml_type
+    				let type_string = string_of_buf (fprintf f "@. %s : %s%a@." fid indent fprint_raml_type
  arrow_type) in 
-				let line1 = string_of_buf (fprintf f "\n%sNon-zero annotations of the argument:%a"
-      indent Pprint.fprint_type_anno atanno) in
-				let line2 = string_of_buf (fprintf f "\n%sNon-zero annotations of result:%a"
-      indent Pprint.fprint_type_anno rtanno) in 
-				let bound_title = string_of_buf (fprintf f "\n%sSimplified bound:\n   %s" indent indent) in
-				let polynomial = string_of_buf (Pprint.fprint_polynomial f pol) in
+				let line1 = "Non-zero annotations of the argument:" in
+
+				let anno_desc : inline list = weave Break @@ List.map (lines @@ string_of_buf @@ fprintf f "%a" Pprint.fprint_type_anno atanno) (fun x -> Text ("   "^ x)) in(*
+				let line2 = string_of_buf (fprintf f "\n%sNon-zero annotations of result"
+      indent) in 
+				let bound_desc : inline list = weave Break @@ List.map (lines @@ string_of_buf @@ fprintf f "%a" Pprint.fprint_type_anno rtanno) (fun x -> Text ("   "^ x)) in *)
+				let bound_title = "Simplified bound: " in
+				let polynomial = weave Break @@ List.map (lines @@ string_of_buf (Pprint.fprint_polynomial f pol)) (fun x -> Text ("   "^ x))
+
+	  in
 				let desc = if List.length descs > 0 then
 							let title_where = string_of_buf (fprintf f "\n %swhere" indent) in
 							let desc = string_of_buf (Pprint.fprint_pol_desc f descs) in
@@ -274,19 +296,24 @@ let gen_func_learnocaml_report ?(simple_name=false) ?(indent="")=
 					
 				
 				
-				let open Learnocaml_report in
-				let body = 
-					(List.concat (List.map 
-					([("Type: " ^ type_string)
-					
-					; line1 
-					
-					; line2
-					
-					; bound_title
 				
-					; polynomial
-					] @ desc ) format_text))  in 
+				let body = 
+					[Text (type_string)
+					;Break
+					;Break
+					;separator 
+					
+					;Break
+					;Text line1
+					; Break]
+					@ anno_desc @
+					[
+					 (*Text line2*)
+						separator 
+					;Break
+					 ;Text bound_title
+					; Break
+					] @ polynomial  @ (List.map desc (fun x -> Text x))     in 
 				[Section ([Text fid], [Message (body,Informative)] )]
 
 				
@@ -774,23 +801,20 @@ let main argv =
                     let deg1 = 4 in (* lower degree*) 
                     let deg2 = 4 in (* upper degree *)
                     let pmode = Rconfig.Pnone in 
-                    
+                    let open Learnocaml_report in
                     let analyze_m = analyze_module analysis_mode m_name metric deg1 deg2 pmode in
                     let analyze_p = analyze_prog analysis_mode m_name metric deg1 deg2 pmode in
 		    let analyze_code (code:string)  = 
 				let (e, env) = Parseraml.parse_raml_module_from_string code in
-				foldl (@) [] (analyze_m e env)
+				let report_body = foldl (@) [] (analyze_m e env) in 
+				[Section ([Text "Complexity Analysis Report"],report_body)]
+				
 				
 				in 
 	
-			
 
-			let open Learnocaml_report in
-			let counter = ref 0 in 
-			let read () = counter := !counter + 1; string_of_int (!counter) in
-                    ignore @@ Lwt_main.run @@ reply (sig_gen string_helper report_helper) 
-			(fun s -> (analyze_code s) @ [Section ([Text " Resource analysis report "],
-							[Message ([Text ( "\n\nYou ran the grader " ^ (read ())   ^ " times ")],Informative)])])
+                ignore @@ Lwt_main.run @@ reply (sig_gen string_helper report_helper) 
+			(fun s -> (analyze_code s))
 
 
 
